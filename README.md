@@ -15,7 +15,7 @@ Remote Play also has a [PC client](https://www.razer.com/cortex)
 * Build the APK using Android Studio or gradle 
  
 ## Authors 
-* [???](???)  
+* [Razer Inc](google@razer.com)
  
 Razer PC Remote Play is derived from moonlight, an open-source project licensed under the GNU General Public License v3.  
 Moonlight for Android is available at [moonlight-android](https://github.com/moonlight-stream/moonlight-android) and Moonlight Common c is available at [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c) 
