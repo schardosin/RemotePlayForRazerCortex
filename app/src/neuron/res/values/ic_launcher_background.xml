@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* Copyright 2024 Razer Inc. This source code file is part of Razer Neuron and is
+ * licensed under the GNU-3.0. For the full license text, please see the file
+ * LICENSE or https://github.com/moonlight-stream/moonlight-qt/blob/master/LICENSE
+ */
+  -->
+<resources>
+  <color name="ic_launcher_background">#44D62C</color>
+</resources>

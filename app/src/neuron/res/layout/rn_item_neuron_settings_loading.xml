@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/m3_small_settings_item_loading_height"
+    android:paddingStart="@dimen/m3_sys_item_padding_start"
+    android:paddingEnd="@dimen/m3_sys_item_padding_end"
+    android:background="@drawable/bg_transparent">
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressbar_loading"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="@dimen/m3_sys_item_margin_end"
+        android:indeterminate="true"
+        app:indicatorSize="24dp"
+        app:indicatorInset="0dp"
+        app:trackThickness="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_loading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_loading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressbar_loading"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAppearance="@style/TextAppearance.Material3.Item.Subtitle"
+        style="@style/RnDeviceSettingsSubtitle"
+        tools:text="@string/placeholder_long" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<resources>
+    <!--
+        A file to keep app the "TextAppearance.Material3" derived text appearance so
+        we can re-use the style and keep things consistent across pages. (Don't repeatedly define
+        a new TextAppearance if you can re-use)
+    -->
+    <style name="TextAppearance.Material3.Page.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">@dimen/m3_sys_item_title_textsize</item>
+    </style>
+    <style name="TextAppearance.Material3.Item.Header" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">@dimen/m3_sys_item_title_textsize</item>
+    </style>
+    <style name="TextAppearance.Material3.Group.Title" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+    <style name="TextAppearance.Material3.Item.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">@dimen/m3_sys_item_title_textsize</item>
+    </style>
+    <style name="TextAppearance.Material3.Item.Subtitle" parent="@style/TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextAppearance.Material3.Loading.Title" parent="@style/TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="TextAppearance.Material3.Loading.Subtitle" parent="@style/TextAppearance.Material3.BodyMedium"/>
+    <style name="TextAppearance.Material3.Page.Subtitle" parent="@style/TextAppearance.Material3.TitleSmall"/>
+</resources>

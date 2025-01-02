@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpinningNeuronLogo">
+        <attr name="pause_duration_ms" format="integer" />
+        <attr name="rotate_duration_ms" format="integer" />
+        <attr name="sections" format="integer" />
+    </declare-styleable>
+
+</resources>

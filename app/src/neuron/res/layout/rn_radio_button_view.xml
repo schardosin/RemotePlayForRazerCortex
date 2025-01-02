@@ -1,0 +1,49 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_transparent"
+    tools:background="?attr/colorSurface"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    tools:theme="@style/AppTheme">
+
+        <LinearLayout
+            android:id="@+id/focus_layout"
+            style="@style/RnRemotePlayRadioLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/irb_tv_subtitle" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/margin_1x"
+                android:textAppearance="@style/TextAppearance.Material3.Item.Subtitle"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/irb_iv_icon"
+                tools:text="@string/placeholder_medium" />
+
+        </LinearLayout>
+
+</merge>
+
+

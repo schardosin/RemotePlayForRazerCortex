@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ImpliedTouchscreenHardware,MissingLeanbackSupport">
+
+    <permission
+        android:name="com.razer.neuron.provider.NeuronContentProvider.DATA_ACCESS_PERMISSION"
+        android:description="@string/shared_content_provider_permission_description"
+        android:knownCerts="@array/known_certs_sha_256"
+        tools:targetApi="s"
+        android:protectionLevel="signature|knownSigner" />
+
+    <uses-permission android:name="com.razer.bianca.provider.NexusContentProvider.DATA_ACCESS_PERMISSION" />
+
+    <queries>
+        <package android:name="com.razer.bianca" />
+        <provider android:authorities="com.razer.bianca" />
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/rn_data_extraction_rules"
+        android:name="com.razer.neuron.RnApp"
+        android:theme="@style/RnTheme"
+        android:icon="@mipmap/ic_launcher_neuron"
+        android:roundIcon="@mipmap/ic_launcher_neuron_round"
+        tools:ignore="MissingTvBanner"
+        tools:node="merge"
+        tools:replace="android:theme,android:icon,android:allowBackup,android:fullBackupContent,android:dataExtractionRules">
+
+        <receiver
+            android:name="com.razer.neuron.NeuronReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+            </intent-filter>
+        </receiver>
+        <!-- Each provider must have a unique "authorities" -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/neuron_dev_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"/>
+        </provider>
+
+        <!-- Each provider must have a unique "authorities" -->
+        <provider
+            android:forceUriPermissions="true"
+            android:grantUriPermissions="true"
+            android:name="com.razer.neuron.provider.NeuronContentProvider"
+            android:authorities="com.razer.neuron"
+            android:enabled="true"
+            android:readPermission="com.razer.neuron.provider.NeuronContentProvider.DATA_ACCESS_PERMISSION"
+            android:writePermission="com.razer.neuron.provider.NeuronContentProvider.DATA_ACCESS_PERMISSION"
+            android:exported="true"/>
+
+        <activity
+            android:name=".PcView"
+            android:exported="true"
+            tools:node="merge">
+            <!--Remove intent filter so that Neuron won't start PcView at start-->
+            <intent-filter tools:node="removeAll" />
+        </activity>
+
+
+        <!--
+            Custom home activity for Neuron
+        -->
+        <activity
+            android:theme="@style/RnTheme.Splash"
+            android:launchMode="singleTask"
+            android:name="com.razer.neuron.main.RnMainActivity"
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:enableOnBackInvokedCallback="true"
+            android:screenOrientation="sensorLandscape"
+            android:exported="true"
+            android:resizeableActivity="true">
+
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowSize"
+                android:value="system-default" />
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowOrientation"
+                android:value="landscape" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="tv.ouya.intent.category.APP" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:theme="@style/RnTheme.Oobe"
+            android:launchMode="singleTask"
+            android:name="com.razer.neuron.oobe.RnOobeActivity"
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:enableOnBackInvokedCallback="true"
+            android:screenOrientation="sensorLandscape"
+            android:exported="true"
+            android:resizeableActivity="true">
+        </activity>
+
+        <activity
+            android:name="com.razer.neuron.web.RnWebViewActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/RnTheme.Web"
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:enableOnBackInvokedCallback="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:theme="@style/RnTheme.Game"
+            android:screenOrientation="sensorLandscape"
+            android:name="com.razer.neuron.game.RnGame"
+            android:exported="true"
+            android:enabled="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:supportsPictureInPicture="true"
+            android:resizeableActivity="true"
+            android:enableOnBackInvokedCallback="false"
+            android:launchMode="singleTask"
+            android:preferMinimalPostProcessing="true">
+
+            <meta-data android:name="WindowManagerPreference:FreeformWindowSize" android:value="system-default" />
+            <meta-data android:name="WindowManagerPreference:FreeformWindowOrientation" android:value="landscape" />
+
+            <!-- Special metadata for NVIDIA Shield devices to prevent input buffering
+                 and most importantly, opt out of mouse acceleration while streaming -->
+            <meta-data
+                android:name="com.nvidia.immediateInput"
+                android:value="true" />
+            <meta-data
+                android:name="com.nvidia.rawCursorInput"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:theme="@style/RnTheme.Game"
+            android:screenOrientation="sensorLandscape"
+            android:name="com.razer.neuron.game.RnGameError"
+            android:exported="true"
+            android:enabled="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:supportsPictureInPicture="true"
+            android:resizeableActivity="true"
+            android:enableOnBackInvokedCallback="false"
+            android:launchMode="singleTask"
+            android:preferMinimalPostProcessing="true">
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowSize"
+                android:value="system-default" />
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowOrientation"
+                android:value="landscape" />
+        </activity>
+
+        <activity
+            android:theme="@style/RnTheme.Settings"
+            android:name="com.razer.neuron.settings.RnSettingsActivity"
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:enableOnBackInvokedCallback="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape"
+            android:exported="true"
+            android:resizeableActivity="true">
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowSize"
+                android:value="system-default" />
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowOrientation"
+                android:value="landscape" />
+        </activity>
+
+
+        <activity
+            android:theme="@style/RnTheme.Settings"
+            android:name="com.razer.neuron.settings.manualpairing.RnManualPairingActivity"
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:enableOnBackInvokedCallback="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="stateVisible"
+            android:exported="true"
+            android:resizeableActivity="true">
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowSize"
+                android:value="system-default" />
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowOrientation"
+                android:value="landscape" />
+        </activity>
+
+        <activity
+            android:theme="@style/RnTheme.Settings"
+            android:name="com.razer.neuron.landing.RnLandingActivity"
+            android:configChanges="mcc|mnc|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            android:enableOnBackInvokedCallback="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="stateVisible"
+            android:exported="true"
+            android:resizeableActivity="true">
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowSize"
+                android:value="system-default" />
+            <meta-data
+                android:name="WindowManagerPreference:FreeformWindowOrientation"
+                android:value="landscape" />
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

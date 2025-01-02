@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RnSettingBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:defaultFocusHighlightEnabled="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/settings_title_margin_top">
+
+        <ImageView
+            android:id="@+id/tv_app_icon"
+            style="@style/RnAppIconBackground"
+            android:focusable="false"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:src="@drawable/ic_launcher_neuron_default_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            style="@style/RnAboutTextOnBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:text="@string/rn_about_app_name"
+            android:textAppearance="@style/TextAppearance.Material3.Page.Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_icon" />
+
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:gravity="center"
+            style="@style/RnAboutSubtitleOnBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1x"
+            android:textAppearance="@style/TextAppearance.Material3.Page.Subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name"
+            tools:text="Version 1.0.0" />
+
+
+        <TextView
+            android:id="@+id/tv_copyright"
+            style="@style/RnAboutSubtitleOnBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_6x"
+            android:gravity="center"
+            android:text="@string/rn_copyright"
+            android:textAppearance="@style/TextAppearance.Material3.Page.Subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_version" />
+
+        <TextView
+            android:id="@+id/tv_rn_all_rights_reserved"
+            style="@style/RnAboutSubtitleOnBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/rn_all_rights_reserved"
+            android:textAppearance="@style/TextAppearance.Material3.Page.Subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_copyright" />
+
+        <LinearLayout
+            android:id="@+id/layout_tos_and_pp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_6x"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_copyright">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tos"
+                style="@style/RnTextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:text="@string/tos" />
+
+            <View
+                android:id="@+id/divider"
+                style="@style/RnOobeButtonDividerOnBackground"
+                android:layout_width="2dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_1x" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pp"
+                style="@style/RnTextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:text="@string/pp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_open_source_notice"
+            style="@style/RnTextButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_1x"
+            android:text="@string/open_source_notice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_tos_and_pp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

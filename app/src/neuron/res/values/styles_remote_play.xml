@@ -1,0 +1,31 @@
+<resources>
+    <style name="RnSettingsScrollbar">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarFadeDuration">0</item>
+        <item name="android:scrollbarSize">2dp</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+    <style name="RnRemotePlayGroupTitle">
+        <item name="android:paddingStart">@dimen/m3_sys_item_padding_start</item>
+        <item name="android:paddingEnd">@dimen/m3_sys_item_padding_end</item>
+        <item name="android:paddingTop">@dimen/margin_2x</item>
+        <item name="android:paddingBottom">@dimen/margin_1x</item>
+    </style>
+    <style name="RnRemotePlayRadioLayout">
+        <item name="android:paddingStart">@dimen/m3_sys_item_padding_start</item>
+        <item name="android:paddingEnd">@dimen/m3_sys_item_padding_end</item>
+        <item name="android:paddingTop">@dimen/margin_2x</item>
+        <item name="android:paddingBottom">@dimen/margin_2x</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="RnSliderTitle">
+        <item name="android:paddingStart">@dimen/m3_sys_item_padding_start</item>
+        <item name="android:paddingEnd">@dimen/m3_sys_item_padding_end</item>
+    </style>
+    <style name="RnSlider" parent="Widget.Material3.Slider">
+        <item name="android:minHeight">40dp</item>
+    </style>
+</resources>

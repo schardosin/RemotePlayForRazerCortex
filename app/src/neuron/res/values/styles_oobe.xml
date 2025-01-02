@@ -1,0 +1,17 @@
+<resources>
+    <style name="RnOobeBackground">
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+    <style name="RnOobeIconOnBackground">
+        <item name="tint">?attr/colorOnSurface</item>
+    </style>
+    <style name="RnOobeButtonDividerOnBackground">
+        <item name="android:background">?attr/colorOnSurface</item>
+    </style>
+    <style name="RnOobeTextOnBackground">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="RnOobeTextOnBackgroundVariant">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+</resources>

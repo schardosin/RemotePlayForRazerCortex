@@ -1,0 +1,79 @@
+<resources>
+
+
+    <style name="RnButtonStyle" parent="Widget.Material3.Button" />
+
+    <style name="RnTextButtonStyle" parent="Widget.Material3.Button.TextButton" />
+
+
+    <style name="RnButtonHintStyle" parent="Widget.Material3.Button">
+        <item name="iconGravity">start</item>
+        <item name="iconTint">@null</item>
+        <item name="iconTintMode">multiply</item>
+        <item name="icon">@drawable/ic_key_a_primary_container</item>
+        <item name="android:focusable">false</item>
+        <item name="android:gravity">center|center_vertical</item>
+        <item name="android:text">@string/placeholder_short</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelLarge</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingHorizontal">@dimen/margin_4x</item>
+        <item name="iconPadding">@dimen/margin_2x</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:backgroundTint">?attr/colorPrimaryContainer</item>
+        <item name="android:textColor">?attr/colorOnPrimaryContainer</item>
+    </style>
+
+    <style name="RnNavigationViewStyle" parent="Widget.Material3.NavigationView">
+        <item name="subheaderColor">?attr/colorPrimary</item>
+        <item name="itemVerticalPadding">@dimen/margin_4x</item>
+        <item name="itemMaxLines">2</item>
+        <item name="itemTextAppearanceActiveBoldEnabled">false</item>
+    </style>
+
+    <style name="RnTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox"/>
+
+    <style name="RnTextInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox"/>
+
+    <!--region AlertDialog-->
+    <style name="RnAlertDialogDefault" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <!--This will disable the focus effect by the bottom button layout -->
+        <item name="android:defaultFocusHighlightEnabled">false</item>
+    </style>
+    <style name="RnAlertDialogNoElevationOverlay" parent="RnAlertDialogDefault">
+        <!--
+            This will disable the "overlay color that is blended with the dialog's base color"
+         -->
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+    <style name="RnAlertDialogInverse" parent="RnAlertDialogNoElevationOverlay">
+        <!--
+            We use parent RnAlertDialogNoElevationOverlay because design team
+            actually WANTS the overlay color that bends with dialog's base color
+        -->
+        <item name="colorSurface">?attr/colorSurfaceInverse</item>
+        <item name="colorOnSurface">?attr/colorOnSurfaceInverse</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/RnAlertDialogMessageTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/RnAlertDialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/RnAlertDialogButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/RnAlertDialogButtonStyle</item>
+    </style>
+    <style name="RnAlertDialogMessageTextStyle" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+    </style>
+    <style name="RnAlertDialogButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">?attr/colorPrimaryInverse</item>
+    </style>
+    <!--endregion-->
+
+
+
+    <!--region Loading-->
+    <style name="RnLoadingBackground">
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+    <style name="RnLoadingTextOnBackground">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <!--endregion-->
+
+</resources>

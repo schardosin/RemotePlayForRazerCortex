@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY hostlabel "Razer Cortex">
+    <!ENTITY applabel "Remote Play">
+    <!ENTITY fullapplabel "Razer PC Remote Play">
+    <!ENTITY nexus "Razer Nexus">]>
+<!--
+/* Copyright 2024 Razer Inc. This source code file is part of Razer Neuron and is
+ * licensed under the GNU-3.0. For the full license text, please see the file
+ * LICENSE or https://github.com/moonlight-stream/moonlight-qt/blob/master/LICENSE
+ */
+  -->
+
+<resources>
+    <!--
+        https://razersw.atlassian.net/browse/NEUR-95
+        - Strings that we reuse will be redefined here, so we can translate them for other languages
+        - New Strings that we define will be prefixed with "rn_"
+        - Strings that don't need translation will be marked with "translatable=false"
+    -->
+
+    <string name="applabel" translatable="false">&applabel;</string>
+    <string name="fullapplabel" translatable="false">&fullapplabel;</string>
+
+    <!-- Pair messages -->
+    <string name="pairing">Pairing…</string>
+    <string name="pair_pc_offline">Computer is offline</string>
+    <string name="pair_incorrect_pin">Incorrect PIN</string>
+    <string name="pair_already_in_progress">Pairing already in progress</string>
+
+    <!-- WOL messages -->
+    <string name="wol_waking_msg">It might take a few seconds for your PC to wake up.</string>
+    <string name="wol_fail">Failed to send Wake-On-LAN packets</string>
+
+
+    <!-- Errors -->
+    <string name="error_pc_offline">Computer is offline</string>
+    <string name="error_manager_not_running">The ComputerManager service is not running. Please wait a few seconds or restart the app.</string>
+    <string name="error_unknown_host">Failed to connect to the host PC. Please check if the host PC is still streaming.</string>
+    <string name="error_404">The host PC returned an HTTP 404 error. Make sure your host PC is running a supported GPU, and no other remote desktop software is running.</string>
+    <string name="error_lost_connection">The network connection was lost.</string>
+    <string name="title_decoding_error">Video Decoder Crashed</string>
+    <string name="message_decoding_error">&applabel; has crashed due to an incompatibility with this device\'s video decoder. Try adjusting the streaming settings if the crashes continue.</string>
+    <string name="title_decoding_reset">Video Settings Reset</string>
+    <string name="message_decoding_reset">Your device\'s video decoder continues to crash at your selected streaming settings. Your streaming settings have been reset to default.</string>
+    <string name="error_usb_prohibited">USB accessory usage is prohibited by your device administrator. Please contact your administrator to gain access to this feature.</string>
+    <string name="unable_to_pin_shortcut">Your current launcher does not allow for creating pinned shortcuts.</string>
+    <string name="video_decoder_init_failed">Video decoder failed to initialize. Your device may not support the selected resolution or frame rate.</string>
+    <string name="no_video_received_error">No video received from host.</string>
+    <string name="no_frame_received_error">Your network connection isn\'t performing well. Reduce your video bitrate setting or try a faster connection.</string>
+    <string name="early_termination_error">Something went wrong with your host PC when starting the stream.\n\nMake sure you don\'t have any DRM-protected content open on your host PC. You can also try restarting your host PC.</string>
+    <string name="frame_conversion_error">The host PC reported a fatal video encoding error.\n\nTry disabling HDR mode, changing the streaming resolution, or changing your host PC\'s display resolution.</string>
+    <string name="check_ports_msg">Check your firewall and port forwarding rules for port(s):</string>
+
+    <!-- Start application messages -->
+    <string name="conn_establishing_title">Establishing Connection</string>
+    <string name="conn_establishing_msg">Starting connection</string>
+    <string name="conn_metered">Warning: Your active network connection is metered!</string>
+    <string name="conn_client_latency">Average frame decoding latency:</string>
+    <string name="conn_client_latency_hw">hardware decoder latency:</string>
+    <string name="conn_hardware_latency">Average hardware decoding latency:</string>
+    <string name="conn_starting">Starting</string>
+    <string name="conn_error_title">Connection Error</string>
+    <string name="conn_error_msg">Failed to start</string>
+    <string name="conn_terminated_title">Connection Terminated</string>
+    <string name="conn_terminated_msg">The connection was terminated</string>
+
+    <!-- General strings -->
+    <string name="help">Help</string>
+    <string name="slow_connection_msg">Slow connection to host PC detected.\nReduce your streaming bitrate to improve connection.</string>
+    <string name="poor_connection_msg">Poor connection to host PC</string>
+    <string name="perf_overlay_streamdetails">Video stream: %1$s %2$.2f FPS</string>
+    <string name="perf_overlay_decoder">Decoder: %1$s</string>
+    <string name="perf_overlay_incomingfps">Incoming frame rate from network: %1$.2f FPS</string>
+    <string name="perf_overlay_renderingfps">Rendering frame rate: %1$.2f FPS</string>
+    <string name="perf_overlay_hostprocessinglatency">Host processing latency min/max/average: %1$.1f/%2$.1f/%3$.1f ms</string>
+    <string name="perf_overlay_netdrops">Frames dropped by your network connection: %1$.2f%%</string>
+    <string name="perf_overlay_netlatency">Average network latency: %1$d ms (variance: %2$d ms)</string>
+    <string name="perf_overlay_dectime">Average decoding time: %1$.2f ms</string>
+
+
+    <!-- Add computer manually activity -->
+    <string name="title_add_pc">Add PC Manually</string>
+
+    <!-- Toasts -->
+    <string name="toast_controller_type_changed">Gamepad type may be changed due to motion sensor emulation</string>
+
+    <!--region dev string -->
+    <string name="request_nexus_permission" translatable="false">Request Nexus Permission</string>
+    <string name="start_pcview" translatable="false">Start PcView</string>
+    <!--endregion-->
+
+    <!--region other button hints -->
+    <string name="rn_start_game">Start Streaming</string>
+    <string name="rn_btn_continue">Continue</string>
+    <!--endregion-->
+
+
+    <!-- permission -->
+    <string name="shared_content_provider_permission_description">Access to games and pairing information stored on Nexus</string>
+
+    <!--region GENERAL PLACEHOLDER -->
+    <string name="placeholder_short" translatable="false">Lorem ipsum</string>
+    <string name="placeholder_medium" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="placeholder_long" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="placeholder_paragraph" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="placeholder_paragraph_long" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="test_text" translatable="false">@string/placeholder_medium</string>
+    <!--endregion-->
+
+
+    <!--region OOBE-->
+    <string name="rn_data_access_permission_explanation">&applabel; needs to access data from &nexus;. Please grant permission for both apps to communicate with each other.</string>
+    <string name="rn_razer_nexus_required_message">&applabel; is meant to be used together with &nexus; to play PC games from your mobile device. Do you want to download it now?</string>
+    <string name="rn_razer_nexus_needs_update_message">&applabel; needs the latest version of &nexus; to play PC games from your mobile device. Do you want to update it now?</string>
+    <string name="rn_download">Download</string>
+    <string name="rn_update">Update</string>
+    <string name="rn_done">Done</string>
+    <string name="rn_allow">Allow</string>
+    <string name="rn_skip">Skip</string>
+    <string name="rn_back">Back</string>
+    <string name="rn_accept">Accept</string>
+    <string name="rn_pair">Pair</string>
+    <string name="rn_unpair">Unpair</string>
+    <string name="rn_start_play">Start Play</string>
+    <string name="rn_settings">Settings</string>
+    <string name="rn_manually_pair">Manually Pair</string>
+    <string name="rn_retry">Retry</string>
+    <string name="rn_cancel">Cancel</string>
+    <string name="cux_terms_of_service_2" translatable="false">https://www.razer.com/legal/terms-of-service-mobile</string>
+    <string name="tos">Terms of Service</string>
+    <string name="cux_url_privacy_policy" translatable="false">https://www.razer.com/legal/privacy-policy-mobile</string>
+    <string name="pp">Privacy Policy</string>
+    <string name="url_open_source_notice" translatable="false">https://www.razer.com/legal/terms-of-service-mobile</string>
+    <string name="open_source_notice" translatable="false">Open Source Software Notice</string>
+    <string name="open_source_message_0" translatable="false"><![CDATA[
+<br/>
+<br/>
+<br/>
+    <h2>The Bouncy Castle Crypto Package For Java</h2> <p/>
+    Copyright © 2000-2023 The Legion of the Bouncy Castle Inc. (<a href="https://www.bouncycastle.org">https://www.bouncycastle.org</a>)
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+<p>
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+<p>
+<b>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</b><p>]]></string>
+    <string name="open_source_message_1" translatable="false"><![CDATA[
+<br/>
+<br/>
+<br/>
+    <h2>JCodec</h2> <p/>
+    Copyright 2008-2019 JCodecProject
+<p>
+Redistribution  and  use  in   source  and   binary   forms,  with  or  without
+modification, are permitted provided  that the following  conditions  are  met:
+<p>
+Redistributions of  source code  must  retain the above  copyright notice, this
+list of conditions and the following disclaimer. Redistributions in binary form
+must  reproduce  the above  copyright notice, this  list of conditions  and the
+following disclaimer in the documentation and/or other  materials provided with
+the distribution.
+<p>
+<b>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,  BUT NOT LIMITED TO, THE  IMPLIED
+WARRANTIES  OF  MERCHANTABILITY  AND  FITNESS  FOR  A  PARTICULAR  PURPOSE  ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,  OR CONSEQUENTIAL DAMAGES
+(INCLUDING,  BUT NOT LIMITED TO,  PROCUREMENT OF SUBSTITUTE GOODS  OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS;  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY  THEORY  OF  LIABILITY,  WHETHER  IN  CONTRACT,  STRICT LIABILITY,  OR TORT
+(INCLUDING  NEGLIGENCE OR OTHERWISE)  ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</b><p>]]></string>
+    <string name="open_source_message_2" translatable="false"><![CDATA[
+    <br/><br/>
+    <br/>
+    <h2>JmDNS</h2> <p/>
+
+                                Apache License<p>
+                           Version 2.0, January 2004<p>
+                        <a href="http://www.apache.org/licenses/“>http://www.apache.org/licenses/</a><p>
+<p>
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION<p>
+<p>
+   1. Definitions.
+<p>
+      \"License\" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+<p>
+      \"Licensor\" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+<p>
+      \"Legal Entity\" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      \"control\" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+<p>
+      \"You\" (or \"Your\") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+<p>
+      \"Source\" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+<p>
+      \"Object\" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+<p>
+      \"Work\" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+<p>
+      \"Derivative Works\" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+<p>
+      \"Contribution\" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, \"submitted\"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as \"Not a Contribution.\"
+<p>
+      \"Contributor\" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+<p>
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+<p>
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+<p>
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+<p>
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+<p>
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+<p>
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+<p>
+      (d) If the Work includes a \"NOTICE\" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+<p>
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+<p>
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+<p>
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+<p>
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an \"AS IS\" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+<p>
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+<p>
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+<p>
+   END OF TERMS AND CONDITIONS
+<p>
+   APPENDIX: How to apply the Apache License to your work.
+<p>
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets \"[]\"
+      replaced with your own identifying information. (Don\'t include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same \"printed page\" as the copyright notice for easier
+      identification within third-party archives.
+<p>
+   Copyright [yyyy] [name of copyright owner]
+<p>
+   Licensed under the Apache License, Version 2.0 (the \"License\");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+<p>
+       <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+<p>
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an \"AS IS\" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.<p>
+</body>
+</html>]]></string>
+    <string name="rn_no_network_connection">Connection to server failed.\nPlease check your Internet connection.</string>
+    <string name="rn_razer_nexus">&nexus;</string>
+    <string name="rn_welcome">Welcome to &fullapplabel;</string>
+    <string name="rn_welcome_subtitle">To continue using Razer software and services you must first accept the Terms of Service and Privacy Policy agreement.</string>
+    <string name="rn_update_razer_nexus">Update &nexus;</string>
+    <string name="rn_download_razer_nexus">Download &nexus;</string>
+    <string name="rn_download_razer_nexus_subtitle">&nexus; is a full-featured game launcher designed to integrate with &fullapplabel;.</string>
+    <string name="rn_permission_explanation">Allow &applabel; to access to the games and pairing information stored on &nexus;</string>
+    <string name="rn_permission_summary_title">To unlock additional functionality, &fullapplabel; requires the following permissions:</string>
+    <string name="rn_nexus_content_provider_permission_name">Pairing</string>
+    <string name="rn_nexus_content_provider_permission_description">Allow &applabel; access to &nexus; game and pairing data</string>
+    <string name="rn_display_mode_title">Streaming Display Mode</string>
+    <!--endregion-->
+
+    <!-- region Game Page-->
+
+    <string name="rn_host_ended_connection_msg">Stream ended abruptly by the host, please check if the host is still streaming and try again.</string>
+    <string name="rn_unsupported_native_resolution_title">Unsupported resolution</string>
+    <string name="rn_unsupported_native_resolution_msg"><![CDATA[The native resolution of %1$s is not support for streaming on this device.
+        The settings <b>Display Mode</b> has been reverted to <b>Duplicate PC display</b>, so please try again later.<br/><br/>
+    Alternatively, you may also try changing <b>Display Size</b> scaling in <b>Android settings</b> and try again.]]></string>
+    <!--endregion-->
+
+    <!-- region Settings Page -->
+    <string name="rn_neuron_settings_title">Settings</string>
+    <string name="rn_app_settings">App settings</string>
+    <string name="rn_remote_play_settings_localized">PC Remote Play</string>
+    <string name="rn_settings_computers">Computers</string>
+    <string name="rn_settings_help">Help</string>
+    <string name="rn_settings_about">About</string>
+    <string name="rn_settings_appearance">Appearance</string>
+    <string name="rn_settings_display_mode_duplicate">Duplicate PC display</string>
+    <string name="rn_settings_display_mode_duplicate_desc">Your PC\'s connected display will be streamed to your device.</string>
+    <string name="rn_settings_display_mode_separate">Separate display</string>
+    <string name="rn_settings_display_mode_separate_desc_x_resolution_x_refresh_rate">Separate display %1$s at %2$sHz</string>
+    <string name="rn_settings_display_mode_phone_only_2_lines">Device\noptimized</string>
+    <string name="rn_settings_display_mode_phone_only_desc_x_resolution_x_refresh_rate">Your PC will create a virtual display matching your device\'s resolution and refresh rate of %1$s at %2$sHz and stream it to your device.\n\nAny screen connected to your PC will be temporarily disabled while streaming.</string>
+    <string name="rn_settings_streaming_options">Streaming options</string>
+    <string name="rn_settings_display_mode_duplicate_oobe_desc">Easily mirror your PC screen to your phone for convenient access to apps and content anywhere. Enjoy smooth synchronization and vibrant visuals—perfect for gaming, presentations, or multitasking on the go!</string>
+    <string name="rn_settings_display_mode_separate_oobe_desc">Extend your PC display to your phone for seamless multitasking. Use your phone as a second screen to view different content, ideal for productivity and gaming on the go.</string>
+    <string name="rn_settings_display_mode_phone_only_oobe_desc">Mirror your PC screen to your phone while the PC display turns off. Enjoy seamless access to apps and content—perfect for gaming or presentations on the go.</string>
+    <!--endregion-->
+
+    <!-- region Remote Play Page -->
+    <string name="rn_setting_neuron_video_settings">Video settings</string>
+    <string name="rn_setting_neuron_display_mode">Display mode</string>
+    <string name="rn_setting_neuron_limit_to_safe_area">Limit screen resolution to safe area</string>
+    <string name="rn_setting_neuron_limit_to_safe_area_desc">Restricts display size to avoid device\'s front camera.</string>
+    <string name="rn_setting_neuron_stretch_to_full_screen">Stretch to full screen</string>
+    <string name="rn_setting_neuron_stretch_to_full_screen_desc">Force the video stream from your PC to fill your device\'s screen.</string>
+    <string name="rn_setting_neuron_limit_refresh_title">Limit refresh rate to 60Hz</string>
+    <string name="rn_setting_neuron_video_bitrate">Video bitrate</string>
+    <string name="rn_setting_neuron_frame_pacing">Frame pacing</string>
+    <string name="rn_setting_neuron_low_latency">Low latency</string>
+    <string name="rn_setting_neuron_balanced">Balanced</string>
+    <string name="rn_setting_neuron_smoothest_video">Smoothest video</string>
+    <string name="rn_setting_neuron_hdr_title">Allow HDR</string>
+    <string name="rn_setting_neuron_hdr_subtitle">Requires your PC\'s connected display to hear HDR enabled.</string>
+    <string name="rn_setting_neuron_general_settings">General settings</string>
+    <string name="rn_setting_neuron_advanced_settings">Advanced settings</string>
+    <string name="rn_setting_neuron_mute_host_pc_title">Mute host PC’s speakers while streaming</string>
+    <string name="rn_setting_neuron_touch_screen">Touch screen control</string>
+    <string name="rn_setting_neuron_virtual_trackpad">Virtual trackpad</string>
+    <string name="rn_setting_neuron_direct_touch">Direct touch</string>
+    <string name="rn_setting_neuron_game_optimization_title">Automatically configure game settings</string>
+    <string name="rn_setting_neuron_game_optimization_subtitle">Optimize resolution, refresh rate, v-sync, and performance to match display settings.</string>
+    <string name="rn_setting_neuron_autoclose_countdown_title">Automatically quit games</string>
+    <string name="rn_setting_neuron_autoclose_countdown_subtitle">Attempt to automatically close games when finished streaming.</string>
+    <!--endregion-->
+
+    <!-- region About Page -->
+    <string name="rn_about_app_name" translatable="false">&fullapplabel;</string>
+    <!--endregion-->
+
+    <!-- region Device Page -->
+    <string name="rn_device_page_pc_pair">Pair</string>
+    <string name="rn_device_page_pc_unpair">Unpair</string>
+    <string name="rn_device_page_pc_start_play">Start play</string>
+    <string name="rn_discovery_state_pc_online">Available</string>
+    <string name="rn_discovery_state_pc_offline">Unavailable</string>
+    <string name="rn_paired_computers">Paired computers</string>
+    <string name="rn_unpaired_computers">Unpaired computers</string>
+    <string name="rn_pairing_hint">Please ensure &hostlabel; is running on the same network.</string>
+    <string name="rn_all_computers">All computers</string>
+    <string name="rn_all_computers_subtitle">To pair a PC, it must be on the same network as your device. Ensure your PC has &hostlabel; v11.0.+ installed and signed in with your Razer ID.</string>
+    <string name="rn_add_computer_manually">Add PC manually</string>
+    <string name="rn_add_computer_manually_subtitle">Enter the IP address of the host computer.</string>
+    <string name="rn_hint_input_pc_ip_address">Input PC IP address</string>
+    <string name="rn_manual_pairing_loading_title">Connecting\u2026</string>
+    <string name="rn_pin_code_title">Enter on the streaming PC\n%1$s</string>
+    <string name="rn_pin_code_subtitle">PIN code:</string>
+    <!--endregion-->
+
+    <!-- region Manually Pairing Page -->
+    <string name="rn_add">Add</string>
+    <string name="rn_warning_could_not_connect_to_host">Could not connect to host</string>
+    <string name="rn_manual_pairing_loading_content">Please ensure &hostlabel; is running on the same network.</string>
+    <string name="rn_connecting">Connecting\u2026</string>
+    <string name="rn_searching">Searching\u2026</string>
+    <string name="rn_warning_unable_to_pair">Unable to pair</string>
+    <!--endregion-->
+
+    <!-- region general -->
+    <string name="rn_please_wait">Please wait…</string>
+    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_all_rights_reserved">All rights reserved.</string>
+    <string name="rn_version_x">Version %1$s</string>
+    <string name="rn_theme_title">Theme</string>
+    <string name="rn_theme_system">System Default</string>
+    <string name="rn_theme_light">Light</string>
+    <string name="rn_theme_dark">Dark</string>
+    <string name="rn_theme_razer">Razer</string>
+    <string name="rn_theme_dialog_title">Choose a theme</string>
+    <string name="rn_restart_dialog_title">Apply settings</string>
+    <string name="rn_restart_dialog_message">Would you like to restart &applabel; to apply your change?</string>
+    <string name="rn_apply_and_restart">Apply and restart</string>
+    <string name="rn_later">Later</string>
+    <string name="rn_restarting">Restarting the app</string>
+    <string name="rn_dismiss">Dismiss</string>
+    <string name="rn_no_app_to_launch">There is no app to launch</string>
+    <string name="rn_resume_or_quit_msg"><![CDATA[<b>%1$s</b> is already running, would you like to resume or quit the game? All unsaved data will be lost.]]></string>
+    <string name="rn_confirm_quit_then_start_msg"><![CDATA[Would you like to quit <b>%1$s</b> first before starting <b>%2$s</b>? All unsaved data will be lost.]]></string> <!--e.g. "Would you like to quit DOOM2 first before starting this game?" -->
+    <string name="rn_start_now">Start Now</string>
+    <string name="rn_quit_and_start">Quit and Start</string>
+    <string name="rn_quit_and_dismiss">Quit and Dismiss</string>
+    <string name="rn_unable_quit_game_error">Unable to quit the game: %1$s</string>
+    <string name="rn_currently_running_game">running game</string> <!--e.g. "Would you like to quit running game first before starting this game?" -->
+    <!--- endregion-->
+
+    <!--region do not translate-->
+    <string name="sans_serif_black" translatable="false">sans-serif-black</string>
+    <string name="sans_serif_bold" translatable="false">sans-serif-medium</string>
+    <string name="sans_serif_medium" translatable="false">sans-serif-medium</string>
+    <string name="sans_serif_regular" translatable="false">sans-serif</string>
+    <string name="sans_serif_light" translatable="false">sans-serif-light</string>
+    <string name="settings_dev_options" translatable="false">Dev Options</string>
+    <string name="neuron_dev_authority" translatable="false">com.razer.neuron.dev</string>
+    <!--- endregion-->
+</resources>

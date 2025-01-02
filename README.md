@@ -12,18 +12,25 @@ Remote Play also has a [PC client](https://www.razer.com/cortex)
 
 ## Building
 * Install Android Studio and the Android NDK
-* In Razer-PC-Remote-Play-android/, create a file called ‘local.properties’. Add an ‘ndk.dir=’ property to the local.properties file and set it equal to your NDK directory.
+* In Razer-PC-Remote-Play-android/, create a file called ‘local.properties’. Add an ‘sdk.dir=’ property to the local.properties file and set it equal to your SDK directory.
 * Build the APK using Android Studio or gradle
 
 ## Authors
 * [???](???)  
 
 Razer PC Remote Play is derived from moonlight, an open-source project licensed under the GNU General Public License v3. 
-This project includes modified versions of the files in
-* app/src/neuron/*
-* app/src/debug/*
-* app/build.gradle
-* build.gradle
-
-
 Moonlight for Android is available at [moonlight-android](https://github.com/moonlight-stream/moonlight-android) and Moonlight Common c is available at [moonlight-common-c](https://github.com/moonlight-stream/moonlight-common-c)
+
+## Modification
+This project includes modified versions of the files in:
+```
+app/src/neuron/*
+app/src/debug/*
+app/build.gradle
+build.gradle
+```
+We tried to keep the original Moonlight source code as un-tounched as possible, so we kepy all the original build flavors. To build using the modified code you can use the flavor _nonRootNeuronDebug_ (instead of the default _nonRootMoonlightDebug_)
+
+
+
+

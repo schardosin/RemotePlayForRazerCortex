@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin_2x"
+    android:paddingHorizontal="@dimen/margin_6x"
+    android:background="@drawable/bg_transparent">
+
+    <TextView
+        android:id="@+id/tv_pin_code_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:text="@string/rn_pin_code_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginTop="@dimen/margin_1x"
+        android:id="@+id/tv_pin_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pin_background_shape"
+        android:fontFamily="@string/sans_serif_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lines="1"
+        android:padding="@dimen/margin_2x"
+        android:textColor="?attr/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pin_code_title"
+        tools:text="1337" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

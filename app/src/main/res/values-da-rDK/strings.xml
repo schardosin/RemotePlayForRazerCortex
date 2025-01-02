@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="conn_stage_none">ingen</string>
+    <string name="conn_stage_platform_initialization">platforminitialisering</string>
+    <string name="conn_stage_name_resolution">navneopløsning</string>
+    <string name="conn_stage_audio_stream_initialization">lydstrømsinitialisering</string>
+    <string name="conn_stage_RTSP_handshake">RTSP-håndtryk</string>
+    <string name="conn_stage_control_stream_initialization">kontrolstrømsinitialisering</string>
+    <string name="conn_stage_video_stream_initialization">videostrømsinitialisering</string>
+    <string name="conn_stage_input_stream_initialization">inputstrømsinitialisering</string>
+    <string name="conn_stage_control_stream_establishment">kontrolstrømsoprettelse</string>
+    <string name="conn_stage_video_stream_establishment">videostrømsoprettelse</string>
+    <string name="conn_stage_audio_stream_establishment">lydstrømsoprettelse</string>
+    <string name="conn_stage_input_stream_establishment">inputstrømsoprettelse</string>
+    <string name="conn_terminated_title">Forbindelsen blev afbrudt.</string>
+
+</resources>

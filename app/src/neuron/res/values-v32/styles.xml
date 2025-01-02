@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- BaseTheme should NOT be modified by value folders -->
+    <style name="RnTheme" parent="BaseTheme">
+        <item name="android:forceDarkAllowed">false</item>
+        <!--Spinner Style-->
+        <item name="android:navigationBarColor">@color/rn_nav_bar</item>
+    </style>
+
+</resources>

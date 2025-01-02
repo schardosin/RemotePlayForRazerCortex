@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/setting_nav_graph"
+    app:startDestination="@id/computers" >
+
+    <fragment
+        android:id="@+id/computers"
+        android:name="com.razer.neuron.settings.devices.RnDevicesFragment"
+        android:label="devices"
+        tools:layout="@layout/rn_fragment_devices" />
+
+    <fragment
+        android:id="@+id/appearance"
+        android:name="com.razer.neuron.settings.appearance.RnAppearanceFragment"
+        android:label="appearance"
+        tools:layout="@layout/rn_fragment_appearance" />
+
+    <fragment
+        android:id="@+id/streaming_options"
+        android:name="com.razer.neuron.settings.remoteplay.RnRemotePlayFragment"
+        android:label="remote_play"
+        tools:layout="@layout/rn_fragment_remote_play" />
+
+    <fragment
+        android:id="@+id/about"
+        android:name="com.razer.neuron.settings.about.RnAboutFragment"
+        android:label="about"
+        tools:layout="@layout/rn_fragment_about" />
+
+    <fragment
+        android:id="@+id/dev_options"
+        android:name="com.razer.neuron.settings.devoptions.RnDevOptionsFragment"
+        android:label="dev options"
+        tools:layout="@layout/rn_fragment_dev_options" />
+
+</navigation>

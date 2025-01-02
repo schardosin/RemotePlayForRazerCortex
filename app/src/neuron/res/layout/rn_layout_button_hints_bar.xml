@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/rn_activity_oobe"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hint_b"
+            android:visibility="gone"
+            style="@style/RnButtonHintStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5x" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hint_y"
+            android:visibility="gone"
+            style="@style/RnButtonHintStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5x"
+            tools:text="Options" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hint_x"
+            android:visibility="gone"
+            style="@style/RnButtonHintStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5x"
+            tools:text="Favorite" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hint_a"
+            android:visibility="gone"
+            style="@style/RnButtonHintStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5x"
+            tools:text="Done" />
+    </LinearLayout>
+
+
+</merge>

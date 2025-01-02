@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/RnSettingBackground">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/top_tool_bar"
+        android:background="@android:color/transparent"
+        android:touchscreenBlocksFocus="false"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tool_bar_height"
+        app:titleTextAppearance="@style/TextAppearance.Material3.Item.Header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        style="@style/RnTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/top_tool_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/margin_6x"
+        android:layout_marginEnd="@dimen/margin_9x"
+        android:hint="@string/rn_hint_input_pc_ip_address"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_address_for_pairing"
+            style="@style/RnTextInputEditText"
+            android:imeOptions="actionDone|flagNoExtractUi"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RnButtonHintStyle"
+        android:layout_marginVertical="@dimen/margin_5x"
+        android:layout_marginEnd="@dimen/margin_9x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/rn_add"
+        app:backgroundTint="@null"
+        app:icon="@null"
+        tools:visibility="visible"
+        android:focusable="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading_layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            layout="@layout/rn_layout_loading"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

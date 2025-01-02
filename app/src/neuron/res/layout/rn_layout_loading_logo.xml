@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/rn_razer_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.razer.neuron.common.SpinningNeuronLogo
+        android:id="@+id/iv_splash_logo"
+        android:layout_width="@dimen/splash_logo_width"
+        android:layout_height="@dimen/splash_logo_height"
+        app:pause_duration_ms="500"
+        app:rotate_duration_ms="250"
+        app:sections="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pb_loading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/rn_white_33"
+        android:progress="50"
+        app:layout_constraintEnd_toEndOf="@+id/iv_splash_logo"
+        app:layout_constraintStart_toStartOf="@id/iv_splash_logo"
+        app:layout_constraintTop_toBottomOf="@id/tv_loading_text" />
+
+    <TextView
+        android:id="@+id/tv_loading_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:maxWidth="320dp"
+        android:maxLines="1"
+        tools:text="@string/placeholder_long"
+        android:textAppearance="@style/TextAppearance.Material3.Loading.Title"
+        android:textColor="@color/rn_black"
+        app:layout_constraintEnd_toEndOf="@id/iv_splash_logo"
+        app:layout_constraintStart_toStartOf="@id/iv_splash_logo"
+        app:layout_constraintBottom_toBottomOf="@id/iv_splash_logo" />
+
+</merge>
