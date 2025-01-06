@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="289dp"
+    android:height="156dp"
+    android:viewportWidth="289"
+    android:viewportHeight="156">
+  <!--
+  A force light mode of the alert dialog.
+  Note:
+  - Referencing color from xml @color/m3_system_dialog is not accurate
+    in this case because, the current apps dynamic color theme can be different
+    from the system's color. In this case the OS's permission dialog color
+    will still follow the system's dark/light theme.
+
+    e.g. app theme is dynamic-color dark, but the system is on light.
+-->
+  <path
+      android:pathData="M279,0H10C4.48,0 0,4.48 0,10V146C0,151.52 4.48,156 10,156H279C284.52,156 289,151.52 289,146V10C289,4.48 284.52,0 279,0Z"
+      android:fillColor="@android:color/system_neutral1_50"/>
+  <path
+      android:pathData="M262,14H27V64H262V14Z"
+      android:fillColor="@android:color/system_neutral2_900"/>
+  <path
+      android:pathData="M59,77L229,77A15,15 0,0 1,244 92L244,92A15,15 0,0 1,229 107L59,107A15,15 0,0 1,44 92L44,92A15,15 0,0 1,59 77z"
+      android:fillColor="@android:color/system_accent1_100"/>
+  <path
+      android:pathData="M59,113L229,113A15,15 0,0 1,244 128L244,128A15,15 0,0 1,229 143L59,143A15,15 0,0 1,44 128L44,128A15,15 0,0 1,59 113z"
+      android:fillColor="@android:color/system_accent1_100"/>
+</vector>

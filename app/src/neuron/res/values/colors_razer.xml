@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region razer colors -->
+    <color name="rn_razer_green">#44D62C</color>
+    <color name="rn_razer_green_alpha">#8844D62C</color>
+    <color name="rn_black">#000000</color>
+    <color name="rn_white">#FFFFFF</color>
+    <color name="rn_white_11">#11FFFFFF</color>
+    <color name="rn_white_22">#22FFFFFF</color>
+    <color name="rn_white_33">#33FFFFFF</color>
+    <color name="rn_white_88">#88FFFFFF</color>
+    <color name="rn_black_11">#11000000</color>
+    <color name="rn_black_22">#22000000</color>
+    <color name="rn_black_33">#33000000</color>
+    <color name="rn_black_88">#88000000</color>
+    <color name="rn_grey">#666666</color>
+    <color name="transparent">#01000000</color>
+    <!--endregion-->
+
+</resources>

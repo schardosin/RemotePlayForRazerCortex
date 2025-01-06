@@ -1,0 +1,43 @@
+<resources>
+    <!-- Only put standard material 3 spec value from material design in this file -->
+    <dimen name="margin_1x">4dp</dimen>
+    <dimen name="margin_2x">8dp</dimen>
+    <dimen name="margin_3x">12dp</dimen>
+    <dimen name="margin_4x">16dp</dimen>
+    <dimen name="margin_5x">20dp</dimen>
+    <dimen name="margin_6x">24dp</dimen>
+    <dimen name="margin_7x">28dp</dimen>
+    <dimen name="margin_8x">32dp</dimen>
+    <dimen name="margin_9x">36dp</dimen>
+    <dimen name="margin_10x">40dp</dimen>
+    <dimen name="margin_14x">56dp</dimen>
+    <dimen name="margin_16x">64dp</dimen>
+    <dimen name="margin_17x">68dp</dimen>
+    <dimen name="margin_18x">72dp</dimen>
+    <dimen name="margin_20x">80dp</dimen>
+    <dimen name="margin_24x">88dp</dimen>
+
+
+    <!--region material design specific measurement. Don't put Neuron UI dimen here-->
+    <dimen name="m3_navigation_view_padding_horizontal">@dimen/margin_3x</dimen>
+    <dimen name="m3_sys_action_bar_textsize">21sp</dimen>
+    <dimen name="m3_sys_item_title_textsize">19sp</dimen> <!--Pixel uses 20sp -->
+    <dimen name="m3_sys_item_margin_top">@dimen/margin_6x</dimen>
+    <dimen name="m3_sys_item_margin_end">@dimen/margin_6x</dimen>
+    <dimen name="m3_sys_item_switch_margin_start">@dimen/margin_4x</dimen>
+    <dimen name="m3_sys_item_padding_start">@dimen/margin_6x</dimen>
+    <dimen name="m3_sys_item_padding_vertical">16dp</dimen>
+    <dimen name="m3_sys_item_padding_end">@dimen/margin_4x</dimen>
+    <dimen name="m3_navigation_view_drawer_max_width">280dp</dimen>
+    <dimen name="m3_small_settings_item_min_height">68dp</dimen>
+    <dimen name="m3_small_settings_item_loading_height">74dp</dimen>
+    <dimen name="m3_divider_size">1dp</dimen>
+    <dimen name="m3_subheader_progress_bar_size">14dp</dimen>
+    <dimen name="m3_subheader_progress_bar_v_padding">1dp</dimen>
+    <dimen name="m3_subheader_progress_bar_h_padding">9dp</dimen>
+    <dimen name="m3_subheader_progress_bar_end_margin">12dp</dimen>
+    <dimen name="m3_subheader_progress_bar_track_thickness">2dp</dimen>
+    <dimen name="m3_default_dropdown_menu_width">160dp</dimen>
+
+    <!--endregion-->
+</resources>

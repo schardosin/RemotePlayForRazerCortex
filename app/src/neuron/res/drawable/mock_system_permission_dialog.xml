@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="289dp"
+    android:height="156dp"
+    android:viewportWidth="289"
+    android:viewportHeight="156">
+  <!--
+  A default version of the alert dialog before API 31 at light
+-->
+  <path
+      android:pathData="M279,0H10C4.48,0 0,4.48 0,10V146C0,151.52 4.48,156 10,156H279C284.52,156 289,151.52 289,146V10C289,4.48 284.52,0 279,0Z"
+      android:fillColor="@color/m3_system_dialog"/>
+  <path
+      android:pathData="M262,14H27V64H262V14Z"
+      android:fillColor="@color/m3_on_system_dialog"/>
+  <path
+      android:pathData="M59,77L229,77A15,15 0,0 1,244 92L244,92A15,15 0,0 1,229 107L59,107A15,15 0,0 1,44 92L44,92A15,15 0,0 1,59 77z"
+      android:fillColor="@color/m3_system_primary_container"/>
+  <path
+      android:pathData="M59,113L229,113A15,15 0,0 1,244 128L244,128A15,15 0,0 1,229 143L59,143A15,15 0,0 1,44 128L44,128A15,15 0,0 1,59 113z"
+      android:fillColor="@color/m3_system_primary_container"/>
+</vector>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--These are just hashes-->
+    <string-array name="known_certs_sha_256">
+
+    </string-array>
+
+</resources>

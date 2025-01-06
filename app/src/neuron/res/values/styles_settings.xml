@@ -1,0 +1,14 @@
+<resources>
+    <style name="RnSettingBackground">
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+    <style name="RnSettingTextOnBackground">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="RnSettingTextOnBackgroundVariant">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="RnLandingHeaderButton">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+</resources>

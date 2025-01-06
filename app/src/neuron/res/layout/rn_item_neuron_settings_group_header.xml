@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_transparent">
+
+    <TextView
+        android:layout_marginStart="@dimen/m3_sys_item_padding_start"
+        android:layout_marginEnd="@dimen/m3_sys_item_padding_end"
+        android:id="@+id/tv_header_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layout_header_loading_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAppearance="@style/TextAppearance.Material3.Group.Title"
+        android:lines="1"
+        android:ellipsize="end"
+        tools:text="@string/placeholder_medium" />
+
+    <FrameLayout
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/layout_header_loading_container"
+        android:layout_marginEnd="@dimen/m3_subheader_progress_bar_end_margin"
+        android:paddingHorizontal="@dimen/m3_subheader_progress_bar_h_padding"
+        android:paddingVertical="@dimen/m3_subheader_progress_bar_v_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_header_subtitle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/pb_header_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorSize="@dimen/m3_subheader_progress_bar_size"
+            tools:progress="50"
+            app:trackThickness="@dimen/m3_subheader_progress_bar_track_thickness"
+            android:indeterminate="true" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

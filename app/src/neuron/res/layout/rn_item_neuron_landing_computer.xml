@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RnLandingComputerItem"
+    android:elevation="0dp"
+    android:layout_height="wrap_content"
+    android:layout_width="155dp"
+    app:cardCornerRadius="@dimen/margin_2x"
+    android:backgroundTint="@color/transparent"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardForegroundColor="@color/transparent"
+    app:strokeColor="@color/transparent"
+    app:cardElevation="0dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingVertical="@dimen/margin_1x"
+        android:paddingHorizontal="@dimen/margin_2x">
+
+        <ImageView
+            android:id="@+id/iv_computer_icon"
+            android:layout_width="71dp"
+            android:layout_height="64dp"
+            android:layout_marginVertical="@dimen/margin_2x"
+            android:src="@drawable/ic_neuron_landing_computer_paired_online"
+            app:layout_constraintStart_toStartOf="@+id/tv_computer_title"
+            app:layout_constraintEnd_toEndOf="@+id/tv_computer_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_computer_title"/>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressbar_loading"
+            style="@style/RnDeviceProgress"
+            app:layout_constraintStart_toStartOf="@+id/iv_computer_icon"
+            app:layout_constraintEnd_toEndOf="@+id/iv_computer_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_computer_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_computer_icon"/>
+
+        <TextView
+            android:id="@+id/tv_computer_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textAppearance="@style/TextAppearance.Material3.Item.Title"
+            app:layout_constraintTop_toBottomOf="@+id/iv_computer_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/RnDeviceSettingsTitle"
+            tools:text="@string/placeholder_long" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

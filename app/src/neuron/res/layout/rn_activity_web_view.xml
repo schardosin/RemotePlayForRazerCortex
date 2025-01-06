@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_web_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/RnWebBackground">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/top_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tool_bar_height"
+        android:layerType="software"
+        app:titleTextAppearance="@style/TextAppearance.Material3.Item.Header"
+        android:touchscreenBlocksFocus="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <WebView
+        android:nextFocusUp="@+id/toolbar"
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:focusedByDefault="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_tool_bar" />
+
+    <ProgressBar
+        android:id="@+id/web_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_tool_bar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

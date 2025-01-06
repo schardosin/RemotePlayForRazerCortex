@@ -1,0 +1,13 @@
+<resources>
+    <style name="RnAboutTextOnBackground">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <style name="RnAboutSubtitleOnBackground">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+    <style name="RnAppIconBackground">
+        <item name="android:background">@drawable/ic_app_background</item>
+        <item name="tint">@color/rn_black</item>
+        <item name="android:backgroundTint">@color/rn_razer_green</item>
+    </style>
+</resources>
