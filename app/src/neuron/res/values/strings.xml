@@ -65,6 +65,30 @@
     <string name="conn_terminated_title">Connection Terminated</string>
     <string name="conn_terminated_msg">The connection was terminated</string>
 
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">Failed to start %1$s.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">none</string>
+    <string name="conn_stage_platform_initialization">platform initialization</string>
+    <string name="conn_stage_name_resolution">name resolution</string>
+    <string name="conn_stage_audio_stream_initialization">audio stream initialization</string>
+    <string name="conn_stage_RTSP_handshake">RTSP handshake</string>
+    <string name="conn_stage_control_stream_initialization">control stream initialization</string>
+    <string name="conn_stage_video_stream_initialization">video stream initialization</string>
+    <string name="conn_stage_input_stream_initialization">input stream initialization</string>
+    <string name="conn_stage_control_stream_establishment">control stream establishment</string>
+    <string name="conn_stage_video_stream_establishment">video stream establishment</string>
+    <string name="conn_stage_audio_stream_establishment">audio stream establishment</string>
+    <string name="conn_stage_input_stream_establishment">input stream establishment</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">The host\'s concurrent stream limit has been reached. Stop an existing stream or increase the \'Channels\' value in &hostlabel; Settings UI.</string>
+    <string name="conn_error_code_5032">Failed to initialize video capture/encoding. Is a display connected and turned on?</string>
+    <string name="conn_error_code_5033">No running app to resume.</string>
+    <string name="conn_error_code_5034">All sessions must be disconnected before quitting.</string>
+
+
     <!-- General strings -->
     <string name="help">Help</string>
     <string name="slow_connection_msg">Slow connection to host PC detected.\nReduce your streaming bitrate to improve connection.</string>
@@ -131,8 +155,8 @@
     <string name="tos">Terms of Service</string>
     <string name="cux_url_privacy_policy" translatable="false">https://www.razer.com/legal/privacy-policy-mobile</string>
     <string name="pp">Privacy Policy</string>
-    <string name="url_open_source_notice" translatable="false">https://www.razer.com/legal/terms-of-service-mobile</string>
-    <string name="open_source_notice" translatable="false">Open Source Software Notice</string>
+    <string name="url_open_source_notice" translatable="false">https://mysupport.razer.com/app/answers/detail/a_id/14911</string>
+    <string name="open_source_notice">Open Source Software Notice</string>
     <string name="open_source_message_0" translatable="false"><![CDATA[
 <br/>
 <br/>
@@ -493,7 +517,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</b><p>]]></string>
 
     <!-- region general -->
     <string name="rn_please_wait">Please wait…</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">All rights reserved.</string>
     <string name="rn_version_x">Version %1$s</string>
     <string name="rn_theme_title">Theme</string>

@@ -6,15 +6,15 @@ apply plugin: 'dagger.hilt.android.plugin'
 
 // 3.1.0 = 3100002  (i.e 2nd build of 3.1.0)
 // 3.0.1 = 3001001  (i.e 1st build of 3.0.1)
-def versionMajor = 99 // 0 ~ 99
-def versionMinor = 9 // 0 ~ 9
-def versionPatch = 99 // 0 ~ 99
+def versionMajor = 0 // 0 ~ 99
+def versionMinor = 5 // 0 ~ 9
+def versionPatch = 1 // 0 ~ 99
 
 // TODO: can read this from Jenkin build number
 // (increment this by 1 for every release of a build)
 // You can reset this to 0 again so long as the one of the other version number is incremented
 // It is not visible to public user
-def versionBuild = 999 // 0 ~ 999
+def versionBuild = 0 // 0 ~ 999
 
 android {
     ndkVersion "26.2.11394342"
@@ -24,7 +24,7 @@ android {
     namespace 'com.limelight'
 
     defaultConfig {
-        minSdk 31
+        minSdk 28
         targetSdk 34
 
         // Made this into a formula so that we cannot install older build over newer builds.

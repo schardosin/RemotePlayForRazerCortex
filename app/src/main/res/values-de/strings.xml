@@ -276,17 +276,6 @@
     <string name="analogscroll_right">Rechter Analogstick</string>
     <string name="analogscroll_left">Linker Analogstick</string>
 
-    <string name="conn_stage_none">keine</string>
-    <string name="conn_stage_platform_initialization">Plattforminitialisierung</string>
-    <string name="conn_stage_name_resolution">Namensauflösung</string>
-    <string name="conn_stage_audio_stream_initialization">Audio-Stream-Initialisierung</string>
-    <string name="conn_stage_RTSP_handshake">RTSP-Handshake</string>
-    <string name="conn_stage_control_stream_initialization">Steuerstrominitialisierung</string>
-    <string name="conn_stage_video_stream_initialization">Videostream-Initialisierung</string>
-    <string name="conn_stage_input_stream_initialization">Eingabestrom-Initialisierung</string>
-    <string name="conn_stage_control_stream_establishment">Steuerstromaufbau</string>
-    <string name="conn_stage_video_stream_establishment">Videostreamaufbau</string>
-    <string name="conn_stage_audio_stream_establishment">Audiostreamaufbau</string>
-    <string name="conn_stage_input_stream_establishment">Eingabestromaufbau</string>
+
 
 </resources>

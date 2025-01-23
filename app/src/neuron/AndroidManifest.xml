@@ -25,9 +25,11 @@
         android:theme="@style/RnTheme"
         android:icon="@mipmap/ic_launcher_neuron"
         android:roundIcon="@mipmap/ic_launcher_neuron_round"
+        android:isGame="false"
         tools:ignore="MissingTvBanner"
         tools:node="merge"
-        tools:replace="android:theme,android:icon,android:allowBackup,android:fullBackupContent,android:dataExtractionRules">
+        tools:remove="android:appCategory"
+        tools:replace="android:isGame,android:theme,android:icon,android:allowBackup,android:fullBackupContent,android:dataExtractionRules">
 
         <receiver
             android:name="com.razer.neuron.NeuronReceiver"
@@ -93,7 +95,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
                 <category android:name="tv.ouya.intent.category.APP" />
             </intent-filter>
         </activity>

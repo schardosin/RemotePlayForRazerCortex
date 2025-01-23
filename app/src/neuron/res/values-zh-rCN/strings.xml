@@ -112,7 +112,7 @@
     <string name="auto_close_never">永不</string>
     <string name="rn_settings_display_mode_phone_only_2_lines">设备优化</string>
     <string name="rn_settings_display_mode_separate">单独显示</string>
-    <string name="rn_unpaired_computers">未配对的计算机</string>
+    <string name="rn_unpaired_computers">未配对的电脑</string>
     <string name="rn_settings_display_mode_separate_desc_x_resolution_x_refresh_rate">分离显示 %1$s 在 %2$sHz</string>
     <string name="rn_manually_pair">手动配对</string>
     <string name="rn_device_page_pc_pair">配对</string>
@@ -137,7 +137,7 @@
     <string name="rn_settings_about">关于</string>
     <string name="rn_version_x">版本 %1$s</string>
     <string name="rn_please_wait">请稍候...</string>
-    <string name="rn_copyright">版权所有 © 2024 Razer Inc.</string>
+    <string name="rn_copyright">版权所有 © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">保留所有权利。</string>
     <string name="pp">隐私政策</string>
     <string name="tos">服务条款</string>
@@ -145,4 +145,29 @@
     <string name="rn_remote_play_settings_localized">电脑远程畅玩</string>
     <string name="rn_setting_neuron_video_settings">视频设置</string>
     <string name="rn_pairing_hint">请确保 &hostlabel;在同一网络上运行。</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">无法启动%1$s。</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">无</string>
+    <string name="conn_stage_platform_initialization">平台初始化</string>
+    <string name="conn_stage_name_resolution">名称解析</string>
+    <string name="conn_stage_audio_stream_initialization">音频流初始化</string>
+    <string name="conn_stage_RTSP_handshake">RTSP握手</string>
+    <string name="conn_stage_control_stream_initialization">控制流初始化</string>
+    <string name="conn_stage_video_stream_initialization">视频流初始化</string>
+    <string name="conn_stage_input_stream_initialization">输入流初始化</string>
+    <string name="conn_stage_control_stream_establishment">控制流建立</string>
+    <string name="conn_stage_video_stream_establishment">视频流建立</string>
+    <string name="conn_stage_audio_stream_establishment">音频流建立</string>
+    <string name="conn_stage_input_stream_establishment">输入流建立</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">主机的并发流限制已达到上限。请停止现有的流或在 &hostlabel; 设置 UI 中增加“通道”的值。</string>
+    <string name="conn_error_code_5032">无法初始化视频捕获/编码。显示器是否已连接并打开？</string>
+    <string name="conn_error_code_5033">没有正在运行的应用可恢复。</string>
+    <string name="conn_error_code_5034">在退出之前必须断开所有连接。</string>
+
+    <string name="open_source_notice">开源软件说明</string>
 </resources>

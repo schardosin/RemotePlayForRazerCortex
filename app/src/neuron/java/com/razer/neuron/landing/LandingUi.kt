@@ -48,8 +48,7 @@ class ComputerItem(
 
     override fun isItemTheSame(that: HasContent): Boolean {
         return computerDetails.uuid == (that as? ComputerItem)?.computerDetails?.uuid &&
-               isFocus == (that as? ComputerItem)?.isFocus &&
-                hasDuplicate == (that as? ComputerItem)?.hasDuplicate
+               hasDuplicate == (that as? ComputerItem)?.hasDuplicate
     }
 
     /**

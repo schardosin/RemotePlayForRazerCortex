@@ -113,18 +113,22 @@ object AIDLManager {
     }
 
     fun onStartNeuronGame() {
-        runCatching {
-            if (controllerAIDLService?.asBinder()?.isBinderAlive == true) {
-                controllerAIDLService?.onStartNeuronGame()
+        globalScope.launch {
+            runCatching {
+                if (controllerAIDLService?.asBinder()?.isBinderAlive == true) {
+                    controllerAIDLService?.onStartNeuronGame()
+                }
             }
         }
     }
 
 
     fun onStopNeuronGame() {
-        runCatching {
-            if (controllerAIDLService?.asBinder()?.isBinderAlive == true) {
-                controllerAIDLService?.onStopNeuronGame()
+        globalScope.launch {
+            runCatching {
+                if (controllerAIDLService?.asBinder()?.isBinderAlive == true) {
+                    controllerAIDLService?.onStopNeuronGame()
+                }
             }
         }
     }

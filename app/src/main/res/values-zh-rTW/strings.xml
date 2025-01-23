@@ -277,17 +277,5 @@
 \n注意：啟用此選項可能會導致您的手把在主機被辨識為 PlayStation 控制器。</string>
     <string name="title_checkbox_gamepad_motion_fallback">模擬手把動態感測器支援</string>
 
-    <string name="conn_stage_none">無</string>
-    <string name="conn_stage_platform_initialization">平台初始化</string>
-    <string name="conn_stage_name_resolution">名稱解析</string>
-    <string name="conn_stage_audio_stream_initialization">音訊流初始化</string>
-    <string name="conn_stage_RTSP_handshake">RTSP握手</string>
-    <string name="conn_stage_control_stream_initialization">控制流初始化</string>
-    <string name="conn_stage_video_stream_initialization">視訊流初始化</string>
-    <string name="conn_stage_input_stream_initialization">輸入流初始化</string>
-    <string name="conn_stage_control_stream_establishment">控制流建立</string>
-    <string name="conn_stage_video_stream_establishment">視訊流建立</string>
-    <string name="conn_stage_audio_stream_establishment">音訊流建立</string>
-    <string name="conn_stage_input_stream_establishment">輸入流建立</string>
 
 </resources>

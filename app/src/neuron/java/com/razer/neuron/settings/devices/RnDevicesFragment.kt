@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -94,11 +95,11 @@ class RnDevicesFragment : Fragment(), DeviceItemAdapter.Listener {
             adapter = DeviceItemAdapter(this@RnDevicesFragment.viewLifecycleOwner)
                 .apply {
                     listener = this@RnDevicesFragment
-                    setHasStableIds(true)
                 }
             // the recyclerview changes every 2s, we have to disable animation
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             addItemDecoration(DeviceItemAdapter.ItemDecoration())
+            itemAnimator = null
         }
     }
 
@@ -174,7 +175,9 @@ class RnDevicesFragment : Fragment(), DeviceItemAdapter.Listener {
     }
 
     private fun DeviceState.ShowPin.handle() {
-        activity?.showPinDialog(pinCode, computerDetails.name)
+        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+            activity?.showPinDialog(pinCode, computerDetails.name)
+        }
     }
 
     private fun DeviceState.RestartApp.handle() {

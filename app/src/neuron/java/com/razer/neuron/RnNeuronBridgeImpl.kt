@@ -2,11 +2,13 @@ package com.razer.neuron
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.preference.PreferenceManager
 import android.util.Size
 import android.view.Window
 import com.limelight.Game
 import com.limelight.NeuronBridgeInterface
+import com.limelight.R
 import com.limelight.RemotePlayConfig
 import com.limelight.binding.video.VideoStats
 import com.limelight.nvstream.ConnectionContext
@@ -299,6 +301,34 @@ class RnNeuronBridgeImpl(val context: Context) : NeuronBridgeInterface {
 
     override fun onStopNeuronGame() {
         AIDLManager.onStopNeuronGame()
+    }
+
+    override fun getLocalizedStageName(stage: String): String {
+        return with(context) {
+            when (stage) {
+                "none" -> getString(R.string.conn_stage_none)
+                "platform initialization" -> getString(R.string.conn_stage_platform_initialization)
+                "name resolution" -> getString(R.string.conn_stage_name_resolution)
+                "audio stream initialization" -> getString(R.string.conn_stage_audio_stream_initialization)
+                "RTSP handshake" -> getString(R.string.conn_stage_RTSP_handshake)
+                "control stream initialization" -> getString(R.string.conn_stage_control_stream_initialization)
+                "video stream initialization" -> getString(R.string.conn_stage_video_stream_initialization)
+                "input stream initialization" -> getString(R.string.conn_stage_input_stream_initialization)
+                "control stream establishment" -> getString(R.string.conn_stage_control_stream_establishment)
+                "video stream establishment" -> getString(R.string.conn_stage_video_stream_establishment)
+                "audio stream establishment" -> getString(R.string.conn_stage_audio_stream_establishment)
+                "input stream establishment" -> getString(R.string.conn_stage_input_stream_establishment)
+                else -> stage
+            }
+        }
+    }
+
+    override fun getLocalizedStringFromErrorCode(errorCode: Int) = when (errorCode) {
+        5031 -> context.getString(R.string.conn_error_code_5031)
+        5032 -> context.getString(R.string.conn_error_code_5032)
+        5033 -> context.getString(R.string.conn_error_code_5033)
+        5034 -> context.getString(R.string.conn_error_code_5034)
+        else -> "(error $this)"
     }
 }
 

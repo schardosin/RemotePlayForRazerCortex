@@ -106,7 +106,6 @@ class RnLandingActivity : BaseControllerActivity(), LandingItemAdapter.Listener,
             adapter = LandingItemAdapter()
                 .apply {
                     listener = this@RnLandingActivity
-                    setHasStableIds(true)
                 }
             itemAnimator = null
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)

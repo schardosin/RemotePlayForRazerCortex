@@ -59,7 +59,7 @@
     <string name="rn_dismiss">忽略</string>
     <string name="rn_resume_or_quit_msg"><![CDATA[<b>%1$s</b> 已經在執行中。你要繼續或退出遊戲？將會遺失所有未儲存的資料。]]></string>
     <string name="rn_quit_and_dismiss">退出並關閉</string>
-    <string name="applist_menu_resume">繼續工作階段</string>
+    <string name="applist_menu_resume">繼續遊戲</string>
     <string name="rn_confirm_quit_then_start_msg"><![CDATA[你要在開始 <b>%2$s</b> 之前先退出 <b>%1$s</b> 嗎？將會遺失所有未儲存的資料。]]></string>
     <string name="rn_quit_and_start">退出並開始</string>
     <string name="rn_currently_running_game">執行中的遊戲</string>
@@ -137,7 +137,7 @@
     <string name="rn_settings_about">關於</string>
     <string name="rn_version_x">版本 %1$s</string>
     <string name="rn_please_wait">請稍等...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">保留所有權利。</string>
     <string name="pp">隱私權政策</string>
     <string name="tos">服務條款</string>
@@ -145,4 +145,29 @@
     <string name="rn_remote_play_settings_localized">PC 遠端遊玩</string>
     <string name="rn_setting_neuron_video_settings">視訊設定</string>
     <string name="rn_pairing_hint">請確定 &hostlabel; 在相同網路中運行。</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">無法開始%1$s。</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">無</string>
+    <string name="conn_stage_platform_initialization">平台初始化</string>
+    <string name="conn_stage_name_resolution">名稱解析</string>
+    <string name="conn_stage_audio_stream_initialization">音訊流初始化</string>
+    <string name="conn_stage_RTSP_handshake">RTSP握手</string>
+    <string name="conn_stage_control_stream_initialization">控制流初始化</string>
+    <string name="conn_stage_video_stream_initialization">視訊流初始化</string>
+    <string name="conn_stage_input_stream_initialization">輸入流初始化</string>
+    <string name="conn_stage_control_stream_establishment">控制流建立</string>
+    <string name="conn_stage_video_stream_establishment">視訊流建立</string>
+    <string name="conn_stage_audio_stream_establishment">音訊流建立</string>
+    <string name="conn_stage_input_stream_establishment">輸入流建立</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">主機的同時串流限制已達上限。請停止現有的串流或在 &hostlabel; 設定 UI 中增加「通道」的值。</string>
+    <string name="conn_error_code_5032">無法初始化視訊擷取/編碼。顯示器是否已連接並開啟？</string>
+    <string name="conn_error_code_5033">沒有正在執行的應用程式可恢復。</string>
+    <string name="conn_error_code_5034">在結束前必須斷開所有連線。</string>
+
+    <string name="open_source_notice">開放原始碼軟體注意事項</string>
 </resources>

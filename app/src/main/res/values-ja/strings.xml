@@ -138,17 +138,5 @@
     <string name="pcview_menu_details">詳細を表示</string>
     <string name="nettest_title_waiting">ネットワーク接続テスト中</string>
 
-    <string name="conn_stage_none">なし</string>
-    <string name="conn_stage_platform_initialization">プラットフォームの初期化</string>
-    <string name="conn_stage_name_resolution">名前解決</string>
-    <string name="conn_stage_audio_stream_initialization">音声ストリームの初期化</string>
-    <string name="conn_stage_RTSP_handshake">RTSPハンドシェイク</string>
-    <string name="conn_stage_control_stream_initialization">制御ストリームの初期化</string>
-    <string name="conn_stage_video_stream_initialization">ビデオストリームの初期化</string>
-    <string name="conn_stage_input_stream_initialization">入力ストリームの初期化</string>
-    <string name="conn_stage_control_stream_establishment">制御ストリームの確立</string>
-    <string name="conn_stage_video_stream_establishment">ビデオストリームの確立</string>
-    <string name="conn_stage_audio_stream_establishment">音声ストリームの確立</string>
-    <string name="conn_stage_input_stream_establishment">入力ストリームの確立</string>
 
 </resources>

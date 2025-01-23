@@ -137,7 +137,7 @@
     <string name="rn_settings_about">Om</string>
     <string name="rn_version_x">Version %1$s</string>
     <string name="rn_please_wait">Vänta ...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">Med ensamrätt.</string>
     <string name="pp">Sekretesspolicy</string>
     <string name="tos">Villkor för användning</string>
@@ -145,4 +145,26 @@
     <string name="rn_remote_play_settings_localized">PC-fjärrspel</string>
     <string name="rn_setting_neuron_video_settings">Videoinställningar</string>
     <string name="rn_pairing_hint">Kontrollera att &hostlabel; körs på samma nätverk.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">ingen</string>
+    <string name="conn_stage_platform_initialization">plattformsinitiering</string>
+    <string name="conn_stage_name_resolution">namnuppslagning</string>
+    <string name="conn_stage_audio_stream_initialization">ljudströmsinitiering</string>
+    <string name="conn_stage_RTSP_handshake">RTSP-handshake	</string>
+    <string name="conn_stage_control_stream_initialization">kontrollströmsinitiering</string>
+    <string name="conn_stage_video_stream_initialization">videoströmsinitiering</string>
+    <string name="conn_stage_input_stream_initialization">inmatningsströmsinitiering</string>
+    <string name="conn_stage_control_stream_establishment">kontrollströmsupprättande</string>
+    <string name="conn_stage_video_stream_establishment">videoströmsupprättande</string>
+    <string name="conn_stage_audio_stream_establishment">ljudströmsupprättande</string>
+    <string name="conn_stage_input_stream_establishment">inmatningsströmsupprättande</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">Värdens gräns för samtidiga strömmar har nåtts. Stoppa en befintlig ström eller öka värdet för "Kanaler" i &hostlabel;-inställningarna.</string>
+    <string name="conn_error_code_5032">Misslyckades med att initiera videoinspelning/kodning. Är en skärm ansluten och påslagen?</string>
+    <string name="conn_error_code_5033">Ingen aktiv app att återuppta.</string>
+    <string name="conn_error_code_5034">Alla sessioner måste kopplas från innan avslutning.</string>
+
+    <string name="open_source_notice">Meddelande om programvara med öppen källkod</string>
 </resources>

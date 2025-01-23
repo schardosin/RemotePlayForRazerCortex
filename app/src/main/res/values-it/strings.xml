@@ -280,17 +280,5 @@
     <string name="title_checkbox_gamepad_touchpad_as_mouse">Controlla sempre il mouse col touchpad</string>
     <string name="perf_overlay_hostprocessinglatency">Latenza di codifica da parte dell\'host min/max/average: %1$.1f/%2$.1f/%3$.1f ms</string>
 
-    <string name="conn_stage_none">nessuno</string>
-    <string name="conn_stage_platform_initialization">inizializzazione della piattaforma</string>
-    <string name="conn_stage_name_resolution">risoluzione dei nomi</string>
-    <string name="conn_stage_audio_stream_initialization">inizializzazione del flusso audio</string>
-    <string name="conn_stage_RTSP_handshake">stretta di mano RTSP</string>
-    <string name="conn_stage_control_stream_initialization">inizializzazione del flusso di controllo</string>
-    <string name="conn_stage_video_stream_initialization">inizializzazione del flusso video</string>
-    <string name="conn_stage_input_stream_initialization">inizializzazione del flusso di input</string>
-    <string name="conn_stage_control_stream_establishment">stabilimento del flusso di controllo</string>
-    <string name="conn_stage_video_stream_establishment">stabilimento del flusso video</string>
-    <string name="conn_stage_audio_stream_establishment">stabilimento del flusso audio</string>
-    <string name="conn_stage_input_stream_establishment">stabilimento del flusso di input</string>
 
 </resources>

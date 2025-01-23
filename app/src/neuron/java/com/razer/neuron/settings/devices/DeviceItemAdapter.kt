@@ -75,12 +75,7 @@ class DeviceItemAdapter(
         }
     }
 
-    override fun getItemId(position: Int): Long {
-        return (getItem(position)?.id?.hashCode() ?: position).toLong()
-    }
-
     init {
-        setHasStableIds(true)
         lifecycleOwner.lifecycle.addObserver(LifecycleEventObserver { _: LifecycleOwner, event: Lifecycle.Event ->
             when (event) {
                 Lifecycle.Event.ON_PAUSE,

@@ -137,7 +137,7 @@
     <string name="rn_settings_about">À propos</string>
     <string name="rn_version_x">Version %1$s</string>
     <string name="rn_please_wait">Veuillez patienter…</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">Tous droits réservés.</string>
     <string name="pp">Politique de confidentialité</string>
     <string name="tos">Conditions d\’utilisation</string>
@@ -145,4 +145,29 @@
     <string name="rn_remote_play_settings_localized">Jeux PC à distance</string>
     <string name="rn_setting_neuron_video_settings">Paramètres vidéo</string>
     <string name="rn_pairing_hint">Veuillez vous assurer que &hostlabel; fonctionne sur le même réseau.</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">Échec du démarrage %1$s.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">aucune</string>
+    <string name="conn_stage_platform_initialization">initialisation de la plateforme</string>
+    <string name="conn_stage_name_resolution">résolution de noms</string>
+    <string name="conn_stage_audio_stream_initialization">initialisation du flux audio</string>
+    <string name="conn_stage_RTSP_handshake">poignée de main RTSP</string>
+    <string name="conn_stage_control_stream_initialization">initialisation du flux de contrôle</string>
+    <string name="conn_stage_video_stream_initialization">initialisation du flux vidéo</string>
+    <string name="conn_stage_input_stream_initialization">initialisation du flux d\'entrée</string>
+    <string name="conn_stage_control_stream_establishment">établissement du flux de contrôle</string>
+    <string name="conn_stage_video_stream_establishment">établissement du flux vidéo</string>
+    <string name="conn_stage_audio_stream_establishment">établissement du flux audio</string>
+    <string name="conn_stage_input_stream_establishment">établissement du flux d\'entrée</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">La limite de flux simultanés de l\'hôte a été atteinte. Arrêtez un flux existant ou augmentez la valeur "Canaux" dans l\'interface utilisateur des paramètres de &hostlabel;.</string>
+    <string name="conn_error_code_5032">Échec de l\'initialisation de la capture/codage vidéo. Un écran est-il connecté et allumé ?</string>
+    <string name="conn_error_code_5033">Aucune application en cours d\'exécution à reprendre.</string>
+    <string name="conn_error_code_5034">Toutes les sessions doivent être déconnectées avant de quitter.</string>
+
+    <string name="open_source_notice">Remarques sur le logiciel libre</string>
 </resources>

@@ -255,17 +255,4 @@
     <string name="title_analog_scrolling">Usar um stick analógico para fazer scroll</string>
     <string name="summary_analog_scrolling">Selecciona um stick analógico para fazer scroll quando a emulação de rato está ativada</string>
 
-    <string name="conn_stage_none">nenhuma</string>
-    <string name="conn_stage_platform_initialization">inicialização da plataforma</string>
-    <string name="conn_stage_name_resolution">resolução de nomes</string>
-    <string name="conn_stage_audio_stream_initialization">inicialização do fluxo de áudio</string>
-    <string name="conn_stage_RTSP_handshake">handshake RTSP</string>
-    <string name="conn_stage_control_stream_initialization">inicialização do fluxo de controle</string>
-    <string name="conn_stage_video_stream_initialization">inicialização do fluxo de vídeo</string>
-    <string name="conn_stage_input_stream_initialization">inicialização do fluxo de entrada</string>
-    <string name="conn_stage_control_stream_establishment">estabelecimento do fluxo de controle</string>
-    <string name="conn_stage_video_stream_establishment">estabelecimento do fluxo de vídeo</string>
-    <string name="conn_stage_audio_stream_establishment">estabelecimento do fluxo de áudio</string>
-    <string name="conn_stage_input_stream_establishment">estabelecimento do fluxo de entrada</string>
-
 </resources>

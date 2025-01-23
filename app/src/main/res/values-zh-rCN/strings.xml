@@ -285,17 +285,5 @@
     <string name="summary_seekbar_vibrate_fallback_strength">增强或减弱设备的震动强度</string>
     <string name="analogscroll_none">默认 (两个摇杆都控制鼠标)</string>
 
-    <string name="conn_stage_none">无</string>
-    <string name="conn_stage_platform_initialization">平台初始化</string>
-    <string name="conn_stage_name_resolution">名称解析</string>
-    <string name="conn_stage_audio_stream_initialization">音频流初始化</string>
-    <string name="conn_stage_RTSP_handshake">RTSP握手</string>
-    <string name="conn_stage_control_stream_initialization">控制流初始化</string>
-    <string name="conn_stage_video_stream_initialization">视频流初始化</string>
-    <string name="conn_stage_input_stream_initialization">输入流初始化</string>
-    <string name="conn_stage_control_stream_establishment">控制流建立</string>
-    <string name="conn_stage_video_stream_establishment">视频流建立</string>
-    <string name="conn_stage_audio_stream_establishment">音频流建立</string>
-    <string name="conn_stage_input_stream_establishment">输入流建立</string>
 
 </resources>

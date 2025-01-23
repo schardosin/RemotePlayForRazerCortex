@@ -1,8 +1,10 @@
 package com.limelight
 
 import android.content.Intent
+import android.content.res.Resources
 import android.util.Size
 import android.view.Window
+import com.limelight.NeuronBridge.implementation
 import com.limelight.binding.video.VideoStats
 import com.limelight.nvstream.ConnectionContext
 import com.limelight.preferences.PreferenceConfiguration
@@ -109,6 +111,23 @@ interface NeuronBridgeInterface {
      * BAA-2375
      */
     fun onStopNeuronGame()
+
+
+    /**
+     * NEUR-37
+     * - From [com.limelight.nvstream.jni.MoonBridge.getStageName]
+     * - or some other means
+     *
+     * Unknown stage will be returned as it is.
+     */
+    fun getLocalizedStageName(stage : String) : String
+
+
+    /**
+     * NEUR-37
+     * Transform custom error code to string
+     */
+    fun getLocalizedStringFromErrorCode(errorCode : Int) : String
 }
 
 
@@ -215,6 +234,10 @@ object NeuronBridge {
     fun onStopNeuronGame() = implementation.onStopNeuronGame()
 
 
+    fun getLocalizedStageName(stage : String) = implementation.getLocalizedStageName(stage)
+
+
+    fun getLocalizedStringFromErrorCode(errorCode : Int) = implementation.getLocalizedStringFromErrorCode(errorCode)
 }
 
 
@@ -271,5 +294,9 @@ object NoNeuronBridge : NeuronBridgeInterface {
     override fun onStopNeuronGame() = Unit
 
     override fun updatePreferenceConfiguration(window: Window, prefConfig: PreferenceConfiguration, intent : Intent) = Unit
+
+    override fun getLocalizedStageName(stage: String) = stage
+
+    override fun getLocalizedStringFromErrorCode(errorCode : Int) = "(error $errorCode)"
 }
 

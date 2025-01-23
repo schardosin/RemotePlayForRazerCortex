@@ -2255,7 +2255,9 @@ public class Game extends ComponentActivity implements SurfaceHolder.Callback,
     public void stageFailed(final String stage, final int portFlags, final int errorCode) {
         // Perform a connection test if the failure could be due to a blocked port
         // This does network I/O, so don't do it on the main thread.
-        final int portTestResult = MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER, 443, portFlags);
+        // For now we just let the test pass, NEUR-127, since we don't
+        // know the detail of the test server
+        final int portTestResult = 0; // MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER, 443, portFlags);
 
         runOnUiThread(new Runnable() {
             @Override
@@ -2297,7 +2299,9 @@ public class Game extends ComponentActivity implements SurfaceHolder.Callback,
         // Perform a connection test if the failure could be due to a blocked port
         // This does network I/O, so don't do it on the main thread.
         final int portFlags = MoonBridge.getPortFlagsFromTerminationErrorCode(errorCode);
-        final int portTestResult = MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER,443, portFlags);
+        // For now we just let the test pass, NEUR-127, since we don't
+        // know the detail of the test server
+        final int portTestResult = 0; // MoonBridge.testClientConnectivity(ServerHelper.CONNECTION_TEST_SERVER,443, portFlags);
 
         runOnUiThread(new Runnable() {
             @Override

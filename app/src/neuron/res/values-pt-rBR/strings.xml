@@ -137,7 +137,7 @@
     <string name="rn_settings_about">Sobre</string>
     <string name="rn_version_x">Versão %1$s</string>
     <string name="rn_please_wait">Aguarde...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">Todos os direitos reservados.</string>
     <string name="pp">Política de Privacidade</string>
     <string name="tos">Termos de Serviço</string>
@@ -145,4 +145,30 @@
     <string name="rn_remote_play_settings_localized">Juego en remoto en PC</string>
     <string name="rn_setting_neuron_video_settings">Configurações de vídeo</string>
     <string name="rn_pairing_hint">Verifique se o &hostlabel; está em execução na mesma rede.</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">Falha ao iniciar %1$s.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">nenhuma</string>
+    <string name="conn_stage_platform_initialization">inicialização da plataforma</string>
+    <string name="conn_stage_name_resolution">resolução de nomes</string>
+    <string name="conn_stage_audio_stream_initialization">inicialização do fluxo de áudio</string>
+    <string name="conn_stage_RTSP_handshake">handshake RTSP</string>
+    <string name="conn_stage_control_stream_initialization">inicialização do fluxo de controle</string>
+    <string name="conn_stage_video_stream_initialization">inicialização do fluxo de vídeo</string>
+    <string name="conn_stage_input_stream_initialization">inicialização do fluxo de entrada</string>
+    <string name="conn_stage_control_stream_establishment">estabelecimento do fluxo de controle</string>
+    <string name="conn_stage_video_stream_establishment">estabelecimento do fluxo de vídeo</string>
+    <string name="conn_stage_audio_stream_establishment">estabelecimento do fluxo de áudio</string>
+    <string name="conn_stage_input_stream_establishment">estabelecimento do fluxo de entrada</string>
+
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">O limite de streams simultâneos do host foi atingido. Pare um stream existente ou aumente o valor de "Canais" nas Configurações do &hostlabel;.</string>
+    <string name="conn_error_code_5032">Falha ao inicializar a captura/codificação de vídeo. Há um display conectado e ligado?</string>
+    <string name="conn_error_code_5033">Nenhum aplicativo em execução para retomar.</string>
+    <string name="conn_error_code_5034">Todas as sessões devem ser desconectadas antes de sair.</string>
+
+    <string name="open_source_notice">Nota do software de código aberto</string>
 </resources>
