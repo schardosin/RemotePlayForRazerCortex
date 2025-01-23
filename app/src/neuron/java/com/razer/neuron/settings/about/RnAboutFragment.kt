@@ -29,6 +29,7 @@ import com.razer.neuron.utils.now
 import com.razer.neuron.utils.openInAppBrowser
 import com.razer.neuron.utils.toDebugTimeString
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Calendar
 
 
 @AndroidEntryPoint
@@ -57,8 +58,11 @@ class RnAboutFragment : Fragment() {
             activity?.openInAppBrowser(Web.PrivacyPolicy)
         }
         binding.btnOpenSourceNotice.setOnClickListener {
-            showOpenSourceNotice()
+            activity?.openInAppBrowser(Web.OpenSourceNotice)
         }
+        val year = Calendar.getInstance().get(Calendar.YEAR).toString()
+        binding.tvCopyright.text = getString(R.string.rn_copyright, year)
+
         if(RnConstants.IS_ALLOW_DEV_MODE) {
             var count = 0
             var lastClickedAt = 0L
@@ -83,6 +87,7 @@ class RnAboutFragment : Fragment() {
 
     private var alertDialog: AlertDialog? = null
 
+    @Deprecated("Just load the URL directly with Web.OpenSourceNotice")
     private fun showOpenSourceNotice() {
         alertDialog.dismissSafely()
         val customTitleView = layoutInflater.inflate(R.layout.layout_open_source_message, null).apply {

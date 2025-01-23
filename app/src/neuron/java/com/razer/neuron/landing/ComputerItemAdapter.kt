@@ -32,14 +32,6 @@ class ComputerItemAdapter : ListAdapter<ComputerItem, RecyclerView.ViewHolder>(
 
     var listener: Listener? = null
 
-    override fun getItemId(position: Int): Long {
-        return (getItem(position)?.computerDetails?.uuid?.hashCode() ?: position).toLong()
-    }
-
-    init {
-        setHasStableIds(true)
-    }
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

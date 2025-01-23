@@ -22,6 +22,7 @@
     <string name="conn_metered">Avviso: La tua connessione di rete attiva è misurata!</string>
     <string name="conn_starting">Avvio in corso</string>
     <string name="conn_error_msg">Errore connessione</string>
+
     <string name="toast_controller_type_changed">Il tipo di gamepad potrebbe essere cambiato a causa dell\'emulazione del sensore di movimento</string>
     <string name="slow_connection_msg">Rilevata una connessione lenta al PC host.\nRidurre il bitrate dello streaming per migliorare la connessione.</string>
     <string name="poor_connection_msg">Scarsa connessione al PC host</string>
@@ -137,7 +138,7 @@
     <string name="rn_settings_about">Info</string>
     <string name="rn_version_x">Versione %1$s</string>
     <string name="rn_please_wait">Attendere...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">Tutti i diritti riservati.</string>
     <string name="pp">Informativa sulla privacy</string>
     <string name="tos">Termini di servizio</string>
@@ -145,4 +146,29 @@
     <string name="rn_remote_play_settings_localized">Gioco Remoto PC</string>
     <string name="rn_setting_neuron_video_settings">Impostazioni video</string>
     <string name="rn_pairing_hint">Assicurati che &hostlabel; sia in esecuzione sulla stessa rete.</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">Errore connessione %1$s.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">nessuno</string>
+    <string name="conn_stage_platform_initialization">inizializzazione della piattaforma</string>
+    <string name="conn_stage_name_resolution">risoluzione dei nomi</string>
+    <string name="conn_stage_audio_stream_initialization">inizializzazione del flusso audio</string>
+    <string name="conn_stage_RTSP_handshake">stretta di mano RTSP</string>
+    <string name="conn_stage_control_stream_initialization">inizializzazione del flusso di controllo</string>
+    <string name="conn_stage_video_stream_initialization">inizializzazione del flusso video</string>
+    <string name="conn_stage_input_stream_initialization">inizializzazione del flusso di input</string>
+    <string name="conn_stage_control_stream_establishment">stabilimento del flusso di controllo</string>
+    <string name="conn_stage_video_stream_establishment">stabilimento del flusso video</string>
+    <string name="conn_stage_audio_stream_establishment">stabilimento del flusso audio</string>
+    <string name="conn_stage_input_stream_establishment">stabilimento del flusso di input</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">È stato raggiunto il limite di stream simultanei dell\'host. Interrompi uno stream esistente o aumenta il valore di "Canali" nell\'interfaccia utente delle impostazioni di &hostlabel;.</string>
+    <string name="conn_error_code_5032">Impossibile inizializzare l\'acquisizione/codifica video. È collegato e acceso un display?</string>
+    <string name="conn_error_code_5033">Nessuna app in esecuzione da riprendere.</string>
+    <string name="conn_error_code_5034">Tutte le sessioni devono essere disconnesse prima dell\'uscita.</string>
+
+    <string name="open_source_notice">Avviso software open source</string>
 </resources>

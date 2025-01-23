@@ -273,17 +273,6 @@
     <string name="suffix_seekbar_vibrate_fallback_strength">%</string>
     <string name="title_analog_scrolling">Använd en analog spak för att bläddra</string>
 
-    <string name="conn_stage_none">ingen</string>
-    <string name="conn_stage_platform_initialization">plattformsinitiering</string>
-    <string name="conn_stage_name_resolution">namnuppslagning</string>
-    <string name="conn_stage_audio_stream_initialization">ljudströmsinitiering</string>
-    <string name="conn_stage_RTSP_handshake">RTSP-handshake	</string>
-    <string name="conn_stage_control_stream_initialization">kontrollströmsinitiering</string>
-    <string name="conn_stage_video_stream_initialization">videoströmsinitiering</string>
-    <string name="conn_stage_input_stream_initialization">inmatningsströmsinitiering</string>
-    <string name="conn_stage_control_stream_establishment">kontrollströmsupprättande</string>
-    <string name="conn_stage_video_stream_establishment">videoströmsupprättande</string>
-    <string name="conn_stage_audio_stream_establishment">ljudströmsupprättande</string>
-    <string name="conn_stage_input_stream_establishment">inmatningsströmsupprättande</string>
+
 
 </resources>

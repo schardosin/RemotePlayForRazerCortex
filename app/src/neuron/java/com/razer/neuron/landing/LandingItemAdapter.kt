@@ -52,14 +52,6 @@ class LandingItemAdapter :
         }
     }
 
-    override fun getItemId(position: Int): Long {
-        return (getItem(position)?.id?.hashCode() ?: position).toLong()
-    }
-
-    init {
-        setHasStableIds(true)
-    }
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -158,6 +150,7 @@ class LandingItemAdapter :
                     } ?: run {
                         binding.rvComputerList.addItemDecoration(ComputerItemAdapter.ItemDecoration())
                         binding.rvComputerList.layoutManager = GridLayoutManager(binding.root.context, 4)
+                        binding.rvComputerList.itemAnimator = null
                         binding.rvComputerList.adapter = ComputerItemAdapter().apply {
                             listener = this@LandingItemAdapter
                             submitList(data.computerItemList)

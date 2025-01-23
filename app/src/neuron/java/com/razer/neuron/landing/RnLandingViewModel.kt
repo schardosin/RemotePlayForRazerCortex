@@ -21,9 +21,7 @@ import com.razer.neuron.pref.RemotePlaySettingsPref
 import com.razer.neuron.settings.PairingStage
 import com.razer.neuron.settings.StreamingManager
 import com.razer.neuron.settings.devices.DeviceItem
-import com.razer.neuron.settings.devices.DeviceState
 import com.razer.neuron.settings.devices.RnDevicesViewModel
-import com.razer.neuron.settings.devices.RnDevicesViewModel.Companion
 import com.razer.neuron.utils.getStringExt
 import com.razer.neuron.utils.now
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -60,7 +58,6 @@ class RnLandingViewModel
     private val computerDetailsList = mutableListOf<ComputerDetails>()
     private data class StateCache(val timestamp : Long, val state : State? = null, val activeAddress : AddressTuple? = null)
     private val statesCache = mutableMapOf<String, StateCache>()
-    private val lastUsedDetailsTimestamp = mutableMapOf<String, Long>()
 
     private val _viewSharedFlow = MutableSharedFlow<LandingState>()
     val viewSharedFlow = _viewSharedFlow.asSharedFlow()
@@ -210,7 +207,7 @@ class RnLandingViewModel
     }
 
     private fun ComputerDetails.lastUsedTimestamp(): Long {
-        return lastUsedDetailsTimestamp[uuid] ?: 0
+        return RemotePlaySettingsPref.getComputerMeta(uuid)?.lastUsedTimestamp ?: 0
     }
 
     /**
@@ -332,7 +329,6 @@ class RnLandingViewModel
              * [PairingStage.Success]
              */
             emitState(LandingState.StartComputerUpdates)
-            onComputerActed(details)
         }
     }
 
@@ -345,16 +341,19 @@ class RnLandingViewModel
             streamingManager.doUnpair(uniqueId, details)
             onComputerDetailsUpdated(fromNeuron = true, details)
             emitState(LandingState.StartComputerUpdates)
-            onComputerActed(details)
         }
     }
 
     fun sendWakeOnLan(computerDetails: ComputerDetails) {
+        if (computerDetails.macAddress == null) {
+            debugToast("Mac address not found for ${computerDetails.name}")
+            emitState(LandingState.ShowMessage(getStringExt(R.string.wol_fail)))
+            return
+        }
         viewModelScope.launch(ioDispatcher) {
             try {
                 WakeOnLanSender.sendWolPacket(computerDetails)
                 emitState(LandingState.ShowMessage(getStringExt(R.string.wol_waking_msg)))
-                onComputerActed(computerDetails)
             } catch (e: IOException) {
                 emitState(LandingState.ShowMessage(getStringExt(R.string.wol_fail)))
             }
@@ -368,7 +367,6 @@ class RnLandingViewModel
         wrapWithLoadingState("startStream") {
             val result = streamingManager.startStream(uniqueId, details)
             result.exceptionOrNull()?.let { logAndRecordException(it) }
-            onComputerActed(details)
         }
     }
 
@@ -383,10 +381,6 @@ class RnLandingViewModel
 
     private fun wasManuallyUnpaired(uuid: String): Boolean {
         return RemotePlaySettingsPref.manuallyUnpaired.contains(uuid)
-    }
-
-    private fun onComputerActed(details: ComputerDetails) {
-        lastUsedDetailsTimestamp[details.uuid] = System.currentTimeMillis()
     }
 
 }

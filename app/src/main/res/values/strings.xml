@@ -304,17 +304,4 @@
     <string name="analogscroll_right">Right analog stick</string>
     <string name="analogscroll_left">Left analog stick</string>
 
-    <string name="conn_stage_none">none</string>
-    <string name="conn_stage_platform_initialization">platform initialization</string>
-    <string name="conn_stage_name_resolution">name resolution</string>
-    <string name="conn_stage_audio_stream_initialization">audio stream initialization</string>
-    <string name="conn_stage_RTSP_handshake">RTSP handshake</string>
-    <string name="conn_stage_control_stream_initialization">control stream initialization</string>
-    <string name="conn_stage_video_stream_initialization">video stream initialization</string>
-    <string name="conn_stage_input_stream_initialization">input stream initialization</string>
-    <string name="conn_stage_control_stream_establishment">control stream establishment</string>
-    <string name="conn_stage_video_stream_establishment">video stream establishment</string>
-    <string name="conn_stage_audio_stream_establishment">audio stream establishment</string>
-    <string name="conn_stage_input_stream_establishment">input stream establishment</string>
-
 </resources>

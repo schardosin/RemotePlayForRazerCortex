@@ -22,6 +22,7 @@
     <string name="conn_metered">警告: アクティブなネットワーク接続は従量制です！</string>
     <string name="conn_starting">開始</string>
     <string name="conn_error_msg">開始できません</string>
+
     <string name="toast_controller_type_changed">モーションセンサーのエミュレーションにより、ゲームパッドのタイプが変更される可能性があります</string>
     <string name="slow_connection_msg">ホスト PC への接続速度の低下が確認されました。\n接続を向上させるためにストリーミングのビットレートを下げてください。</string>
     <string name="poor_connection_msg">ホスト PC との接続が十分ではありません</string>
@@ -137,7 +138,7 @@
     <string name="rn_settings_about">バージョン情報</string>
     <string name="rn_version_x">バージョン %1$s</string>
     <string name="rn_please_wait">お待ちください...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">禁無断転載.</string>
     <string name="pp">プライバシーポリシー</string>
     <string name="tos">サービス利用条件</string>
@@ -145,4 +146,29 @@
     <string name="rn_remote_play_settings_localized">PC リモートプレイ</string>
     <string name="rn_setting_neuron_video_settings">ビデオ設定</string>
     <string name="rn_pairing_hint">&hostlabel; が同じネットワーク上で実行していることを確認してください。</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">開始できません%1$s。</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">なし</string>
+    <string name="conn_stage_platform_initialization">プラットフォームの初期化</string>
+    <string name="conn_stage_name_resolution">名前解決</string>
+    <string name="conn_stage_audio_stream_initialization">音声ストリームの初期化</string>
+    <string name="conn_stage_RTSP_handshake">RTSPハンドシェイク</string>
+    <string name="conn_stage_control_stream_initialization">制御ストリームの初期化</string>
+    <string name="conn_stage_video_stream_initialization">ビデオストリームの初期化</string>
+    <string name="conn_stage_input_stream_initialization">入力ストリームの初期化</string>
+    <string name="conn_stage_control_stream_establishment">制御ストリームの確立</string>
+    <string name="conn_stage_video_stream_establishment">ビデオストリームの確立</string>
+    <string name="conn_stage_audio_stream_establishment">音声ストリームの確立</string>
+    <string name="conn_stage_input_stream_establishment">入力ストリームの確立</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">ホストの同時ストリーム制限に達しました。既存のストリームを停止するか、&hostlabel; 設定 UI で「チャネル」の値を増やしてください。</string>
+    <string name="conn_error_code_5032">ビデオキャプチャ/エンコーディングの初期化に失敗しました。ディスプレイが接続され、オンになっていますか?</string>
+    <string name="conn_error_code_5033">再開する実行中のアプリがありません。</string>
+    <string name="conn_error_code_5034">終了する前にすべてのセッションを切断する必要があります。</string>
+
+    <string name="open_source_notice">オープンソースソフトウェア通知</string>
 </resources>

@@ -288,17 +288,4 @@
     <string name="summary_seekbar_vibrate_fallback_strength">Amplifica o reduce la intensidad de la vibración de tu dispositivo</string>
     <string name="suffix_seekbar_vibrate_fallback_strength">%</string>
 
-    <string name="conn_stage_none">ninguna</string>
-    <string name="conn_stage_platform_initialization">inicialización de la plataforma</string>
-    <string name="conn_stage_name_resolution">resolución de nombres</string>
-    <string name="conn_stage_audio_stream_initialization">inicialización del flujo de audio</string>
-    <string name="conn_stage_RTSP_handshake">saludo RTSP</string>
-    <string name="conn_stage_control_stream_initialization">inicialización del flujo de control</string>
-    <string name="conn_stage_video_stream_initialization">inicialización del flujo de video</string>
-    <string name="conn_stage_input_stream_initialization">inicialización del flujo de entrada</string>
-    <string name="conn_stage_control_stream_establishment">establecimiento del flujo de control</string>
-    <string name="conn_stage_video_stream_establishment">establecimiento del flujo de video</string>
-    <string name="conn_stage_audio_stream_establishment">establecimiento del flujo de audio</string>
-    <string name="conn_stage_input_stream_establishment">establecimiento del flujo de entrada</string>
-
 </resources>

@@ -16,6 +16,7 @@ import com.limelight.NeuronBridge
 import com.limelight.R
 import com.limelight.nvstream.http.toResolution
 import com.limelight.utils.SpinnerDialog
+import com.razer.neuron.common.ComputerMeta
 import com.razer.neuron.common.debugToast
 import com.razer.neuron.di.GlobalCoroutineScope
 import com.razer.neuron.extensions.applyTransition
@@ -148,6 +149,7 @@ class RnGame : Game() {
         RnGameError.finishShownMessage()
         RnGameError.cancelPendingRestart()
         createCount++
+        updateComputerMetaTimestamp()
     }
 
 
@@ -164,7 +166,7 @@ class RnGame : Game() {
 
     override fun stageFailed(stage: String?, portFlags: Int, errorCode: Int) {
         lifecycleScope.launch {
-            resources.getConnectionErrors(stage ?: "", portFlags, errorCode).forEach {
+            resources.getConnectionErrors(stage ?: "", portFlags, errorCode = errorCode).forEach {
                     error ->
                 handleUngracefulTermination(error.title ?: getString(R.string.conn_error_title), error.message)
                 if(!isFinishing) {
@@ -180,28 +182,11 @@ class RnGame : Game() {
      * Show [stage] on UI
      */
     override fun stageStarting(stage: String?) {
-        var localizedStage = stage
-        when (stage) {
-            "none" -> localizedStage = getString(R.string.conn_stage_none)
-            "platform initialization" -> localizedStage = getString(R.string.conn_stage_platform_initialization)
-            "name resolution" -> localizedStage = getString(R.string.conn_stage_name_resolution)
-            "audio stream initialization" -> localizedStage = getString(R.string.conn_stage_audio_stream_initialization)
-            "RTSP handshake" -> localizedStage = getString(R.string.conn_stage_RTSP_handshake)
-            "control stream initialization" -> localizedStage =
-                getString(R.string.conn_stage_control_stream_initialization)
-
-            "video stream initialization" -> localizedStage = getString(R.string.conn_stage_video_stream_initialization)
-            "input stream initialization" -> localizedStage = getString(R.string.conn_stage_input_stream_initialization)
-            "control stream establishment" -> localizedStage =
-                getString(R.string.conn_stage_control_stream_establishment)
-
-            "video stream establishment" -> localizedStage = getString(R.string.conn_stage_video_stream_establishment)
-            "audio stream establishment" -> localizedStage = getString(R.string.conn_stage_audio_stream_establishment)
-            "input stream establishment" -> localizedStage = getString(R.string.conn_stage_input_stream_establishment)
-        }
-        localizedStage.takeIf { !it.isNullOrBlank() }?.let {
-            view.showLoadingProgress(it)
-        }
+        stage?.let { NeuronBridge.getLocalizedStageName(it) }
+            ?.takeIf { it.isNotBlank() }
+            ?.let {
+                view.showLoadingProgress(it)
+            }
     }
 
     /**
@@ -401,7 +386,16 @@ class RnGame : Game() {
         view.showNotificationText(message)
     }
 
-
+    private fun updateComputerMetaTimestamp() {
+        val uuid = intent.getStringExtra(EXTRA_PC_UUID) ?: return
+        val existComputerMeta = RemotePlaySettingsPref.getComputerMeta(uuid)
+        val newComputerMeta = existComputerMeta?.copy(
+            lastUsedTimestamp = now()
+        ) ?: ComputerMeta(
+            lastUsedTimestamp = now()
+        )
+        RemotePlaySettingsPref.setComputerMeta(uuid, newComputerMeta)
+    }
   
 }
 

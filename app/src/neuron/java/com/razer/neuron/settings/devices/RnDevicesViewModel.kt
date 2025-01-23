@@ -13,7 +13,6 @@ import com.razer.neuron.common.debugToast
 import com.razer.neuron.common.logAndRecordException
 import com.razer.neuron.di.IoDispatcher
 import com.razer.neuron.di.UnexpectedExceptionHandler
-import com.razer.neuron.landing.LandingState
 import com.razer.neuron.model.AppThemeType
 import com.razer.neuron.nexus.NexusContentProvider
 import com.razer.neuron.pref.RemotePlaySettingsPref
@@ -55,7 +54,6 @@ class RnDevicesViewModel
     private val computerDetailsList = mutableListOf<ComputerDetails>()
     private data class StateCache(val timestamp : Long, val state : State? = null, val activeAddress : AddressTuple? = null)
     private val statesCache = mutableMapOf<String, StateCache>()
-    private val lastUsedDetailsTimestamp = mutableMapOf<String, Long>()
 
     private val _viewSharedFlow = MutableSharedFlow<DeviceState>()
     val viewSharedFlow = _viewSharedFlow.asSharedFlow()
@@ -146,7 +144,7 @@ class RnDevicesViewModel
     }
 
     private fun ComputerDetails.lastUsedTimestamp(): Long {
-        return lastUsedDetailsTimestamp[uuid] ?: 0
+        return RemotePlaySettingsPref.getComputerMeta(uuid)?.lastUsedTimestamp ?: 0
     }
 
     /**
@@ -275,7 +273,6 @@ class RnDevicesViewModel
              * [PairingStage.Success]
              */
             emitState(DeviceState.StartComputerUpdates)
-            onComputerActed(details)
         }
     }
 
@@ -288,11 +285,15 @@ class RnDevicesViewModel
             streamingManager.doUnpair(uniqueId, details)
             onComputerDetailsUpdated(fromNeuron = true, details)
             emitState(DeviceState.StartComputerUpdates)
-            onComputerActed(details)
         }
     }
 
     fun sendWakeOnLan(computerDetails: ComputerDetails) {
+        if (computerDetails.macAddress == null) {
+            debugToast("Mac address not found for ${computerDetails.name}")
+            emitState(DeviceState.ShowMessage(getStringExt(R.string.wol_fail)))
+            return
+        }
         viewModelScope.launch(ioDispatcher) {
             try {
                 WakeOnLanSender.sendWolPacket(computerDetails)
@@ -310,7 +311,6 @@ class RnDevicesViewModel
         wrapWithLoadingState("startStream") {
             val result = streamingManager.startStream(uniqueId, details)
             result.exceptionOrNull()?.let { logAndRecordException(it) }
-            onComputerActed(details)
         }
     }
 
@@ -325,10 +325,6 @@ class RnDevicesViewModel
 
     private fun wasManuallyUnpaired(uuid: String): Boolean {
         return RemotePlaySettingsPref.manuallyUnpaired.contains(uuid)
-    }
-
-    private fun onComputerActed(details: ComputerDetails) {
-        lastUsedDetailsTimestamp[details.uuid] = System.currentTimeMillis()
     }
 
 }

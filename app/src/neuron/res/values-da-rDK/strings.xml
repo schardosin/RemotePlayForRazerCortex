@@ -137,7 +137,7 @@
     <string name="rn_settings_about">Om</string>
     <string name="rn_version_x">Version %1$s</string>
     <string name="rn_please_wait">Vent ...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">Alle rettigheder forbeholdes.</string>
     <string name="pp">Erklæring om beskyttelse af personlige oplysninger</string>
     <string name="tos">Vilkår for service</string>
@@ -145,4 +145,30 @@
     <string name="rn_remote_play_settings_localized">PC Remote Play</string>
     <string name="rn_setting_neuron_video_settings">Videoindstillinger</string>
     <string name="rn_pairing_hint">Sørg for, at &hostlabel; kører på det samme netværk.</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">Kunne ikke starte %1$s.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">ingen</string>
+    <string name="conn_stage_platform_initialization">platforminitialisering</string>
+    <string name="conn_stage_name_resolution">navneopløsning</string>
+    <string name="conn_stage_audio_stream_initialization">lydstrømsinitialisering</string>
+    <string name="conn_stage_RTSP_handshake">RTSP-håndtryk</string>
+    <string name="conn_stage_control_stream_initialization">kontrolstrømsinitialisering</string>
+    <string name="conn_stage_video_stream_initialization">videostrømsinitialisering</string>
+    <string name="conn_stage_input_stream_initialization">inputstrømsinitialisering</string>
+    <string name="conn_stage_control_stream_establishment">kontrolstrømsoprettelse</string>
+    <string name="conn_stage_video_stream_establishment">videostrømsoprettelse</string>
+    <string name="conn_stage_audio_stream_establishment">lydstrømsoprettelse</string>
+    <string name="conn_stage_input_stream_establishment">inputstrømsoprettelse</string>
+    <string name="conn_terminated_title">Forbindelsen blev afbrudt.</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">Værten har nået grænsen for samtidige streams. Stop en eksisterende stream, eller øg værdien for "Kanaler" i &hostlabel;-indstillingerne.</string>
+    <string name="conn_error_code_5032">Kunne ikke initialisere videoindfangning/kodning. Er en skærm tilsluttet og tændt?</string>
+    <string name="conn_error_code_5033">Ingen kørende app, der kan genoptages.</string>
+    <string name="conn_error_code_5034">Alle sessioner skal afbrydes, før du afslutter.</string>
+
+    <string name="open_source_notice">Bemærkning om open source-software</string>
 </resources>

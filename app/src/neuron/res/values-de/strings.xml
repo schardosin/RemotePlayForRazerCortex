@@ -137,7 +137,7 @@
     <string name="rn_settings_about">Info</string>
     <string name="rn_version_x">Version %1$s</string>
     <string name="rn_please_wait">Bitte warten ...</string>
-    <string name="rn_copyright">Copyright © 2024 Razer Inc.</string>
+    <string name="rn_copyright">Copyright © %s Razer Inc.</string>
     <string name="rn_all_rights_reserved">Alle Rechte vorbehalten.</string>
     <string name="pp">Datenschutzrichtlinien</string>
     <string name="tos">Nutzungsbedingungen</string>
@@ -145,4 +145,29 @@
     <string name="rn_remote_play_settings_localized">PC Remote Play</string>
     <string name="rn_setting_neuron_video_settings">Video-Einstellungen</string>
     <string name="rn_pairing_hint">Bitte achte darauf, dass &hostlabel; im gleichen Netzwerk läuft.</string>
+
+    <!-- Failed to start error message, part 1  -->
+    <string name="failed_to_start_msg_with_param">Verbindungsfehler %1$s.</string>
+
+    <!-- Failed to start error message, part 2  -->
+    <string name="conn_stage_none">keine</string>
+    <string name="conn_stage_platform_initialization">Plattforminitialisierung</string>
+    <string name="conn_stage_name_resolution">Namensauflösung</string>
+    <string name="conn_stage_audio_stream_initialization">Audio-Stream-Initialisierung</string>
+    <string name="conn_stage_RTSP_handshake">RTSP-Handshake</string>
+    <string name="conn_stage_control_stream_initialization">Steuerstrominitialisierung</string>
+    <string name="conn_stage_video_stream_initialization">Videostream-Initialisierung</string>
+    <string name="conn_stage_input_stream_initialization">Eingabestrom-Initialisierung</string>
+    <string name="conn_stage_control_stream_establishment">Steuerstromaufbau</string>
+    <string name="conn_stage_video_stream_establishment">Videostreamaufbau</string>
+    <string name="conn_stage_audio_stream_establishment">Audiostreamaufbau</string>
+    <string name="conn_stage_input_stream_establishment">Eingabestromaufbau</string>
+
+    <!-- Failed to start error message, part 3  -->
+    <string name="conn_error_code_5031">Die gleichzeitige Stream-Grenze des Hosts wurde erreicht. Beenden Sie einen vorhandenen Stream oder erhöhen Sie den Wert "Kanäle" in der &hostlabel;-Einstellungs-Benutzeroberfläche.</string>
+    <string name="conn_error_code_5032">Fehler beim Initialisieren der Videoaufnahme/Kodierung. Ist ein Display angeschlossen und eingeschaltet?</string>
+    <string name="conn_error_code_5033">Keine laufende App zum Fortsetzen.</string>
+    <string name="conn_error_code_5034">Alle Sitzungen müssen vor dem Beenden getrennt werden.</string>
+
+    <string name="open_source_notice">Hinweise zu Open-Source-Software</string>
 </resources>

@@ -2,19 +2,16 @@ package com.razer.neuron.pref
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import androidx.core.content.edit
 import com.limelight.preferences.PreferenceConfiguration
 import com.razer.neuron.RnApp
+import com.razer.neuron.common.ComputerMeta
+import com.razer.neuron.extensions.edit
 import com.razer.neuron.extensions.enumPref2
 import com.razer.neuron.model.AppThemeType
 import com.razer.neuron.model.DisplayModeOption
 import com.razer.neuron.model.SessionStats
 import com.razer.neuron.model.SessionStats.Companion.fromJson
 import com.razer.neuron.shared.RazerRemotePlaySettingsKey
-import com.razer.neuron.shared.SharedConstants.DEFAULT_LIST_FPS
-import com.razer.neuron.shared.SharedConstants.DEFAULT_LIST_RESOLUTION
-import com.razer.neuron.shared.SharedConstants.LIST_FPS
-import com.razer.neuron.shared.SharedConstants.LIST_RESOLUTION
 import com.razer.neuron.shared.SharedConstants.REDUCE_REFRESH_RATE_PREF_STRING
 import com.razer.neuron.shared.SharedConstants.REMOTE_PLAY_SETTINGS
 import hu.autsoft.krate.Krate
@@ -23,6 +20,7 @@ import hu.autsoft.krate.default.withDefault
 import hu.autsoft.krate.intPref
 import hu.autsoft.krate.longPref
 import hu.autsoft.krate.stringPref
+import timber.log.Timber
 
 object RemotePlaySettingsPref : Krate {
     const val REMOTE_PLAY_SETTINGS_NAME = REMOTE_PLAY_SETTINGS
@@ -66,6 +64,9 @@ object RemotePlaySettingsPref : Krate {
     private const val NEURON_DEV_MODE = "${NEURON}_dev_mode"
 
     private const val AUTO_CLOSE_RUNNING_GAME_COUNTDOWN_IN_SEC = "auto_close_running_game_countdown_sec"
+
+    private const val COMPUTER_META = "computer_meta"
+    private fun getComputerMetaKey(uuid: String) = "${COMPUTER_META}_${uuid}"
 
     override val sharedPreferences: SharedPreferences by lazy {
         PreferenceManager.getDefaultSharedPreferences(RnApp.appContext)
@@ -131,10 +132,28 @@ object RemotePlaySettingsPref : Krate {
         set(value) {
             displayModeRaw = value.displayModeName
         }
-
-
-
+    
     val isLimitRefreshRate by booleanPref(REDUCE_REFRESH_RATE_PREF_STRING).withDefault(false)
+
+    fun getComputerMeta(uuid: String): ComputerMeta? {
+        val computerMetaJsonString = sharedPreferences.getString(getComputerMetaKey(uuid), "{}") ?: return null
+        Timber.v("getComputerMeta ${computerMetaJsonString}")
+        return ComputerMeta.fromJson(computerMetaJsonString)
+    }
+
+    fun setComputerMeta(uuid: String, computerMeta: ComputerMeta?) {
+        val key = getComputerMetaKey(uuid)
+        sharedPreferences.edit {
+            if(computerMeta == null) {
+                Timber.v("setComputerMeta null")
+                remove(key)
+            } else {
+                val computerMetaJsonString = computerMeta.toJsonString()
+                Timber.v("setComputerMeta ${computerMetaJsonString}")
+                putString(key, computerMetaJsonString)
+            }
+        }
+    }
 
 }
 
