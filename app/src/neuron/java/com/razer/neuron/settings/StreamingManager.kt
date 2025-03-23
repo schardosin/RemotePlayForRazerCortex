@@ -122,6 +122,7 @@ class StreamingManager(
     suspend fun startStream(
         uniqueId: String,
         details: ComputerDetails,
+        selectedApp: NvApp? = null
     ): Result<ComputerDetails> {
         return withContext(ioDispatcher) {
             if (details.state == ComputerDetails.State.OFFLINE || details.activeAddress == null) {
@@ -129,7 +130,8 @@ class StreamingManager(
             }
             return@withContext try {
                 val httpConn = getNvHttp(uniqueId, details)
-                httpConn.appList.getDesktopAppOrNull()?.let {
+                val appToLaunch = selectedApp ?: httpConn.appList.getDesktopAppOrNull()
+                appToLaunch?.let {
                     val intent = RnGame.createStartStreamIntent(
                         it,
                         details,

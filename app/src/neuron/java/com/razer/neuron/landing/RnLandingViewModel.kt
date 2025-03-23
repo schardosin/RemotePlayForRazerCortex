@@ -8,6 +8,8 @@ import com.limelight.nvstream.http.ComputerDetails
 import com.limelight.nvstream.http.ComputerDetails.AddressTuple
 import com.limelight.nvstream.http.ComputerDetails.State
 import com.limelight.nvstream.http.isPaired
+import com.limelight.nvstream.http.NvApp
+import com.limelight.nvstream.http.NvHTTP
 import com.limelight.nvstream.wol.WakeOnLanSender
 import com.razer.neuron.common.debugToast
 import com.razer.neuron.common.logAndRecordException
@@ -64,6 +66,9 @@ class RnLandingViewModel
 
     private val _focusStateFlow = MutableSharedFlow<FocusItem>(replay = 1)
     val focusStateFlow = _focusStateFlow.asSharedFlow()
+
+    private val _appListFlow = MutableSharedFlow<List<NvApp>>()
+    val appListFlow = _appListFlow.asSharedFlow()
 
     private fun emitState(state: LandingState) {
         viewModelScope.launch { _viewSharedFlow.emit(state) }
@@ -360,15 +365,52 @@ class RnLandingViewModel
         }
     }
 
-    fun onStartStream(
-        uniqueId: String,
-        details: ComputerDetails
-    ) = viewModelScope.launch {
-        wrapWithLoadingState("startStream") {
-            val result = streamingManager.startStream(uniqueId, details)
-            result.exceptionOrNull()?.let { logAndRecordException(it) }
+    private var selectedComputer: ComputerDetails? = null
+
+    fun onStartStream(uniqueId: String, details: ComputerDetails) {
+        selectedComputer = details
+        viewModelScope.launch {
+            wrapWithLoadingState("fetchAppList") {
+                fetchAppList(details)
+            }
         }
     }
+
+    private suspend fun fetchAppList(details: ComputerDetails) {
+        withContext(ioDispatcher) {
+            try {
+                val nvHttp = streamingManager.getNvHttp(details.uuid, details)
+                val appList = nvHttp.getAppList()
+                _appListFlow.emit(appList)
+            } catch (e: Exception) {
+                logAndRecordException(e)
+                emitState(LandingState.ShowError(e))
+            }
+        }
+    }
+
+    fun startStreamWithApp(uniqueId: String, details: ComputerDetails?, app: NvApp) = viewModelScope.launch {
+        wrapWithLoadingState("startStream") {
+            val computerDetails = details ?: selectedComputer
+            if (computerDetails == null) {
+                emitState(LandingState.ShowError(IllegalStateException("No computer selected")))
+                return@wrapWithLoadingState
+            }
+            val result = streamingManager.startStream(uniqueId, computerDetails, app)
+            result.fold(
+                onSuccess = { 
+                    // Handle success
+                    Timber.d("Streaming started successfully with app: ${app.appName}")
+                },
+                onFailure = { e -> 
+                    logAndRecordException(e)
+                    emitState(LandingState.ShowError(e))
+                }
+            )
+        }
+    }
+
+    fun getSelectedComputer(): ComputerDetails? = selectedComputer
 
     private suspend fun <T> wrapWithLoadingState(tag: String, task: suspend () -> T): T {
         return try {

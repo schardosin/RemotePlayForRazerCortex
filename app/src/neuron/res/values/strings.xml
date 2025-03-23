@@ -551,4 +551,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</b><p>]]></string>
     <string name="settings_dev_options" translatable="false">Dev Options</string>
     <string name="neuron_dev_authority" translatable="false">com.razer.neuron.dev</string>
     <!--- endregion-->
+
+    <string name="title_select_app">Select an app</string>
 </resources>

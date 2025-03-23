@@ -26,6 +26,7 @@ import com.limelight.computers.ComputerManagerListener2
 import com.limelight.computers.ComputerManagerService
 import com.limelight.databinding.RnActivityLandingBinding
 import com.limelight.nvstream.http.ComputerDetails
+import com.limelight.nvstream.http.NvApp
 import com.razer.neuron.common.BaseControllerActivity
 import com.razer.neuron.common.materialAlertDialogTheme
 import com.razer.neuron.common.toast
@@ -271,6 +272,11 @@ class RnLandingActivity : BaseControllerActivity(), LandingItemAdapter.Listener,
                 }
             }
         }
+        lifecycleScope.launch {
+            viewModel.appListFlow.collect { appList ->
+                showAppSelectionDialog(appList)
+            }
+        }
     }
 
     private fun LandingState.StartComputerPolling.handle() {
@@ -408,7 +414,7 @@ class RnLandingActivity : BaseControllerActivity(), LandingItemAdapter.Listener,
                 startPairing(computer)
             }
             DeviceAction.STREAM -> {
-                startStream(computer)
+                viewModel.onStartStream(managerBinder?.uniqueId ?: "", computer)
             }
             DeviceAction.WOL -> {
                 viewModel.sendWakeOnLan(computer)
@@ -458,4 +464,17 @@ class RnLandingActivity : BaseControllerActivity(), LandingItemAdapter.Listener,
         stopComputerUpdates(false)
     }
 
+    private fun showAppSelectionDialog(appList: List<NvApp>) {
+        val appNames = appList.map { it.appName }.toTypedArray()
+        MaterialAlertDialogBuilder(this, materialAlertDialogTheme())
+            .setTitle(R.string.title_select_app)
+            .setItems(appNames) { _, which ->
+                val selectedApp = appList[which]
+                managerBinder?.let { binder ->
+                    viewModel.startStreamWithApp(binder.uniqueId, null, selectedApp)
+                }
+            }
+            .setNegativeButton(R.string.rn_cancel, null)
+            .show()
+    }
 }
