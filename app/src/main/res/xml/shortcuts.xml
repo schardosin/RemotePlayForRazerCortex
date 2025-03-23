@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="discover"
+        android:enabled="true"
+        android:icon="@drawable/ic_neuron_landing_computer_available"
+        android:shortcutShortLabel="@string/discover_pc">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="${applicationId}"
+            android:targetClass="${applicationId}.main.RnMainActivity">
+            <extra android:name="action" android:value="discover" />
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_add"
+        android:shortcutShortLabel="@string/settings_text">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="${applicationId}"
+            android:targetClass="${applicationId}.main.RnMainActivity">
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent>
+    </shortcut>
+</shortcuts>

@@ -2,7 +2,7 @@
 <!DOCTYPE resources [
     <!ENTITY hostlabel "Razer Cortex">
     <!ENTITY applabel "Remote Play">
-    <!ENTITY fullapplabel "Razer PC Remote Play">
+    <!ENTITY fullapplabel "Remote Play For Razer Cortex">
     <!ENTITY nexus "Razer Nexus">]>
 <!--
 /* Copyright 2024 Razer Inc. This source code file is part of Razer Neuron and is
@@ -553,4 +553,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</b><p>]]></string>
     <!--- endregion-->
 
     <string name="title_select_app">Select an app</string>
+    <string name="discover_pc">Discover PC</string>
+    <string name="settings_text">Settings</string>
 </resources>

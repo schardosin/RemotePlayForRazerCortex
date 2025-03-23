@@ -2,7 +2,7 @@
 <!DOCTYPE resources [
     <!ENTITY hostlabel "Razer Cortex">
     <!ENTITY applabel "Remote Play">
-    <!ENTITY fullapplabel "Razer PC Remote Play">
+    <!ENTITY fullapplabel "Remote Play For Razer Cortex">
     <!ENTITY nexus "Razer Nexus">]>
 <resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     <string name="pairing">Emparelhando...</string>
