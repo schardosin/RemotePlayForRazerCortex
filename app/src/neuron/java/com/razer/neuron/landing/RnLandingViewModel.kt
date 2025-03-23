@@ -381,7 +381,8 @@ class RnLandingViewModel
             try {
                 val nvHttp = streamingManager.getNvHttp(details.uuid, details)
                 val appList = nvHttp.getAppList()
-                _appListFlow.emit(appList)
+                val sortedAppList = appList.sortedBy { it.appName.lowercase() }
+                _appListFlow.emit(sortedAppList)
             } catch (e: Exception) {
                 logAndRecordException(e)
                 emitState(LandingState.ShowError(e))
