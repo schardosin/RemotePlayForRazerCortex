@@ -8,7 +8,7 @@ apply plugin: 'dagger.hilt.android.plugin'
 // 3.0.1 = 3001001  (i.e 1st build of 3.0.1)
 def versionMajor = 0 // 0 ~ 99
 def versionMinor = 5 // 0 ~ 9
-def versionPatch = 1 // 0 ~ 99
+def versionPatch = 2 // 0 ~ 99
 
 // TODO: can read this from Jenkin build number
 // (increment this by 1 for every release of a build)
